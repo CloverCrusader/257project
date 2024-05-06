@@ -26,7 +26,7 @@ def Carleton():
         cur = conn.cursor()
              # sql = "SELECT city FROM table WHERE city = 'Northfield'"
         #Carleton = "SELECT acceptrate FROM schoolstats WHERE school = 'Carleton College'"
-        test = "SELECT acceptrate FROM schoolstats" 
+        test = "SELECT * FROM schoolstats" 
         cur.execute( test )
         #row = cur.fetchone()
 
