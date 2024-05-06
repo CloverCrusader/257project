@@ -42,12 +42,12 @@ def main():
             
         cur.execute( sql )
 
-        # copy information from titleless CSV files into tables
-        sql = "\copy financialAid FROM 'financialAid.csv' DELIMITER ',' CSV"
-        cur.execute( sql )
+        # # copy information from titleless CSV files into tables
+        # sql = "\copy financialAid FROM 'financialAid.csv' DELIMITER ',' CSV"
+        # cur.execute( sql )
 
-        sql = "\copy schoolStats FROM 'schoolStats.csv' DELIMITER ',' CSV"
-        cur.execute( sql )
+        # sql = "\copy schoolStats FROM 'schoolStats.csv' DELIMITER ',' CSV"
+        # cur.execute( sql )
 
         # close connection to server
         cur.close()
