@@ -29,6 +29,6 @@ def Carleton():
         cur.execute( Carleton )
         row = cur.fetchone()
 
-        return (row1)
+        return (row)
  #"SELECT MIN(school) FROM schoolstats WHERE school = 'Carleton'"    
 print (Carleton())
