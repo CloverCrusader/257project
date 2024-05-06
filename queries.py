@@ -25,10 +25,11 @@ def Carleton():
                 password="chip979bond") # your low security password
         cur = conn.cursor()
              # sql = "SELECT city FROM table WHERE city = 'Northfield'"
-        Carleton = "SELECT acceptrate FROM schoolstats WHERE school = 'Carleton College';"
-        cur.execute( Carleton )
+        #Carleton = "SELECT acceptrate FROM schoolstats WHERE school = 'Carleton College'"
+        test = "SELECT acceptrate FROM schoolstats" 
+        cur.execute( test )
         row = cur.fetchone()
 
-        return (row)
+        return cur.fetchall()
  #"SELECT MIN(school) FROM schoolstats WHERE school = 'Carleton'"    
 print (Carleton())
