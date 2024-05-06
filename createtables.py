@@ -26,11 +26,11 @@ def main():
                 CREATE TABLE financialAid (
                     state text, 
                     school text, 
-                    0to30grand real, 
-                    30to48grand real, 
-                    48to75grand real,
-                    75to110grand real,
-                    110grandup real); 
+                    f0to30grand real, 
+                    f30to48grand real, 
+                    f48to75grand real,
+                    f75to110grand real,
+                    f110grandup real);  
                 DROP TABLE IF EXISTS schoolStats; 
                 CREATE TABLE schoolStats (
                     state text, 
