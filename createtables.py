@@ -22,8 +22,8 @@ def main():
         cur = conn.cursor()
         
         # table creation parameters
-        sql = """DROP TABLE IF EXISTS financialAid; 
-                CREATE TABLE financialAid (
+        sql = """DROP TABLE IF EXISTS financialaid; 
+                CREATE TABLE financialaid (
                     state text, 
                     school text, 
                     f0to30grand real, 
@@ -31,8 +31,8 @@ def main():
                     f48to75grand real,
                     f75to110grand real,
                     f110grandup real);  
-                DROP TABLE IF EXISTS schoolStats; 
-                CREATE TABLE schoolStats (
+                DROP TABLE IF EXISTS schoolstats; 
+                CREATE TABLE schoolstats (
                     state text, 
                     school text, 
                     tuition real, 
@@ -43,10 +43,10 @@ def main():
         cur.execute( sql )
 
         # # copy information from titleless CSV files into tables
-        # sql = "\copy financialAid FROM 'financialAid.csv' DELIMITER ',' CSV"
+        # sql = "\copy financialaid FROM 'financialaid.csv' DELIMITER ',' CSV"
         # cur.execute( sql )
 
-        # sql = "\copy schoolStats FROM 'schoolStats.csv' DELIMITER ',' CSV"
+        # sql = "\copy schoolstats FROM 'schoolstats.csv' DELIMITER ',' CSV"
         # cur.execute( sql )
 
         # close connection to server
