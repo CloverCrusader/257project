@@ -24,7 +24,7 @@ def main():
                 CREATE TABLE financialAid (
                     state text, 
                     school text, 
-                    0to30grand real, 
+                    zeroto30grand real, 
                     30to48grand real, 
                     48to75grand real,
                     75to110grand real,
