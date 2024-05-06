@@ -41,7 +41,8 @@ def main():
                     popmajor text);"""
             
         cur.execute( sql )
-
+        conn.commit()
+        
         # # copy information from titleless CSV files into tables
         # sql = "\copy financialaid FROM 'financialaid.csv' DELIMITER ',' CSV"
         # cur.execute( sql )
