@@ -1,0 +1,33 @@
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is the capital city of England.</p>
+</div>
+
+<div id="Ranking" class="tabcontent">
+  <h3>Ranking</h3>
+  <p>Ranking is the capital of France.</p> 
+</div>
+
+<div id="Compare" class="tabcontent">
+  <h3>Compare</h3>
+  <p>Compare is the capital of Japan.</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
