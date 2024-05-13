@@ -40,7 +40,7 @@ def cost():
                 password="chip979bond") # your low security password
         cur = conn.cursor()
       
-        test = "SELECT school FROM schoolstates ORDER BY acceptrate DESC LIMIT 5;" 
+        test = "SELECT school FROM schoolstats ORDER BY acceptrate DESC LIMIT 5;" 
         cur.execute( test )
         row = cur.fetchone()[0]
 
