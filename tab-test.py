@@ -44,6 +44,5 @@ def cost():
         cur.execute( test )
         row = cur.fetchone()[0]
 
-        return row
 print (Carleton())
 print (cost())
