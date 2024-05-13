@@ -27,7 +27,7 @@ def Carleton():
         Carleton = "SELECT acceptrate FROM schoolstats WHERE school = 'Carleton College'"
         # test = "SELECT * FROM schoolstats" 
         cur.execute( Carleton )
-        row = cur.fetchone()
+        row = cur.fetchone()[0]
 
         return row
  #"SELECT MIN(school) FROM schoolstats WHERE school = 'Carleton'"    
@@ -42,7 +42,7 @@ def cost():
       
         test = "SELECT school FROM financialaid" 
         cur.execute( test )
-        row = cur.fetchone()
+        row = cur.fetchone()[0]
 
         return row
 print (Carleton())
