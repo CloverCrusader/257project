@@ -6,7 +6,7 @@ import json;
 app = Flask(__name__)
 
 def get_name_options():
-      conn = psycopg2.connect(
+ 
             host="localhost",
             port=5432,   
             database="lamm2",
