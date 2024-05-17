@@ -5,13 +5,10 @@ import json;
 
 app = Flask(__name__)
 
-
 def get_name_options():
     
     host="localhost",
     port=5432,  
-
-                # please update the following with your own information :
     database="rapaczs", # your sterns account
     user="rapaczs", # your sterns usernam
     password="chip979bond" # your low security password
