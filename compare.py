@@ -11,8 +11,7 @@ def get_name_options():
             port=5432,   
             database="lamm2",
             user="lamm2",
-            password="corn453smile")
-    
+            password="corn453smile"
     cur = conn.cursor()
 
     query = "SELECT * FROM schoolstats ORDER BY school ASC";
