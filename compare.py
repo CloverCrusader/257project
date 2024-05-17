@@ -14,7 +14,7 @@ def get_name_options():
                 # please update the following with your own information :
     database="rapaczs", # your sterns account
     user="rapaczs", # your sterns usernam
-    password="chip979bond") # your low security password
+    password="chip979bond" # your low security password
     
     cur = conn.cursor()
 
