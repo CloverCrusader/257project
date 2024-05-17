@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask import render_template
 import psycopg2;
@@ -6,13 +7,15 @@ import json;
 app = Flask(__name__)
 
 def get_name_options():
- 
-            host="localhost",
-            port=5432,   
-            database="lamm2",
-            user="lamm2",
-            password="corn453smile"
+    
+    host="localhost",
+    port=5432,  
+    database="rapaczs", # your sterns account
+    user="rapaczs", # your sterns usernam
+    password="chip979bond" # your low security password
+    
     cur = conn.cursor()
+
     query = "SELECT * FROM schoolstats ORDER BY school ASC";
     cur.execute(query)
     
@@ -65,6 +68,5 @@ def get_name_options():
 
 
 if __name__ == '__main__':
-    my_port = 5105
-    
+    my_port = 5432
     app.run(host='0.0.0.0', port = my_port) 
