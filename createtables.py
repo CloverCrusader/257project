@@ -1,5 +1,5 @@
 import psycopg2
-
+app = Flask(__name__)
 def main():
         conn = psycopg2.connect(
                 host="localhost",
