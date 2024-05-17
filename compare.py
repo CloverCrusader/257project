@@ -6,12 +6,12 @@ import json;
 app = Flask(__name__)
 
 def get_name_options():
-    
-    host="localhost",
-    port=5432,  
-    database="rapaczs", # your sterns account
-    user="rapaczs", # your sterns usernam
-    password="chip979bond" # your low security password
+      conn = psycopg2.connect(
+            host="localhost",
+            port=5432,   
+            database="lamm2",
+            user="lamm2",
+            password="corn453smile")
     
     cur = conn.cursor()
 
@@ -67,5 +67,6 @@ def get_name_options():
 
 
 if __name__ == '__main__':
-    my_port = 5432
+    my_port = 5105
+    
     app.run(host='0.0.0.0', port = my_port) 
