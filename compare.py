@@ -1,6 +1,6 @@
 
 import psycopg2;
-
+app = Flask(__name__)
 
 def get_name_options():
     
