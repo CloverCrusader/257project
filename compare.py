@@ -3,7 +3,7 @@ from flask import Flask
 from flask import render_template
 import psycopg2;
 import json;
-
+@app.route('/')
 app = Flask(__name__)
 
 
@@ -32,7 +32,7 @@ def get_name_options():
     html = html + '\n'
   
   return html
-@app.route('/')
+
 def comparepg():
 
   html_string = get_name_options()
