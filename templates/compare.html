@@ -34,10 +34,15 @@ CollegeFind
   
 <div id="Compare" class="tabcontent">
   <h3>Compare</h3>
-  <p>Compare is the capital of Japan.</p>
-<!--   <div class="dropdown1" onmouseover="dropDownFunction('compareDropdown')" onmouseout="closeDropDownFunction('compareDropdown')"> -->
+  <p>Compare two different schools.</p>
   <p class ="center-para">
-  Select a college here:
+  Select one college here:
+<select id="college_name" onchange="updateCollege()">
+    {{DropdownOptions|safe}}
+</select>
+  </p>
+  <p class ="center-para">
+  Select college two here:
 <select id="college_name" onchange="updateCollege()">
     {{DropdownOptions|safe}}
 </select>
