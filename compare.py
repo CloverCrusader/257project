@@ -19,11 +19,11 @@ def get_name_options():
 
   cur = conn.cursor()
 
-  query = "SELECT * FROM schoolstats ORDER BY school ASC";
+  query = "SELECT school FROM schoolstats ORDER BY school ASC";
   cur.execute(query)
     
   rows = cur.fetchall()
-
+  
   return rows
 
 #     html = ""
