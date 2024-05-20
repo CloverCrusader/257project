@@ -17,7 +17,7 @@ def get_name_options():
         user="rapaczs",
         password="chip979bond")
 
-    cur = conn.cursor()
+  cur = conn.cursor()
 
     query = "SELECT * FROM schoolstats ORDER BY school ASC";
     cur.execute(query)
