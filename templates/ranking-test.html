@@ -3,45 +3,6 @@
 <style>
 body {font-family: Tahoma;}
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-  font-family: Tahoma;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-  font-family: Tahoma;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-  display: block;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
 </style>
 </head>
 <body>
@@ -64,27 +25,27 @@ CollegeFind
 
 <div id="Ranking" class="tabcontent">
   <h3><center>Rankings (according to U.S. News Report)</center></h3>
-  <div class="dropdown">
-    <button onclick="dropDownFunction('rankingDropdown')" class="dropbtn">Filter by</button>
-    <div id="rankingDropdown" class="tab">
-      <button onclick="filterBy('acceptrate', 'max')">Acceptance Rate (High)</button>
-      <button onclick="filterBy('acceptrate', 'min')">Acceptance Rate (Low)</button>
-      <button onclick="filterBy('gradrate', 'max')">Graduation Rate (High)</button>
-      <button onclick="filterBy('gradrate', 'min')">Graduation Rate (Low)</button>
-    </div>
+  <div class="dropdown" onmouseover="dropDownFunction('rankingDropdown')" onmouseout="closeDropDownFunction('rankingDropdown')">
+  <button class="dropbtn">Filter by</button>
+  <div id="rankingDropdown" class="dropdown-content">
+    <button onclick="filterBy('acceptrate', 'max')"><a>Acceptance Rate (High)</a></button>
+    <button onclick="filterBy('acceptrate', 'min')"><a>Acceptance Rate (Low)</a></button>
+    <button onclick="filterBy('gradrate', 'max')"><a>Graduation Rate (High)</a></button>
+    <button onclick="filterBy('gradrate', 'min')"><a>Graduation Rate (Low)</a></button>
+  </div>
   </div> 
   
-<div class="dropdown">
-    <button onclick="dropDownFunction('rankingDropdown')" class="dropbtn">Estimate my Financial Aid</button>
-    <div id="rankingDropdown" class="tab">
+  <div class="dropdown" onmouseover="dropDownFunction('rankingDropdown')" onmouseout="closeDropDownFunction('rankingDropdown')">
+  <button class="dropbtn">Estimate my Financial Aid</button>
+  <div id="moneyDropdown" class="dropdown-content">
     <p>
-    <center>My household income:</center>
+    <center>My household income is:</center>
     </p>
-      <button onclick="filterBy('acceptrate', 'max')">Less than 30k</button>
-      <button onclick="filterBy('acceptrate', 'min')">Between 30k and 48k</button>
-      <button onclick="filterBy('gradrate', 'max')">Between 48k and 75k</button>
-      <button onclick="filterBy('gradrate', 'min')">Between 75k and 110k</button>
-      <button onclick="filterBy('gradrate', 'min')">More than 110k</button>
+      <button onclick="filterBy('acceptrate', 'max')"><a>Less than 30k</a></button>
+      <button onclick="filterBy('acceptrate', 'min')"><a>Between 30k and 48k</a></button>
+      <button onclick="filterBy('gradrate', 'max')"><a>Between 48k and 75k</a></button>
+      <button onclick="filterBy('gradrate', 'min')"><a>Between 75k and 110k</a></button>
+      <button onclick="filterBy('gradrate', 'min')"><a>More than 110k</a></button>
     </div>
   </div> 
 </div>
