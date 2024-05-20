@@ -15,7 +15,8 @@ def get_name_options():
     database="rapaczs", # your sterns account
     user="rapaczs", # your sterns usernam
     password="chip979bond" # your low security password
-    cur = conn.cursor()
+  
+ cur = conn.cursor()
 
     query = "SELECT * FROM schoolstats ORDER BY school ASC";
     cur.execute(query)
