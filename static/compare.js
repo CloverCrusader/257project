@@ -35,3 +35,7 @@ function collegeName() {
  
   the_name.innerHTML = dropdown.value;
 }
+
+function go(){
+	location.href="/comparingStats";
+}
