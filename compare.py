@@ -68,5 +68,5 @@ def get_name_options():
 
 
 if __name__ == '__main__':
-    my_port = 5432
+    my_port = 5223
     app.run(host='0.0.0.0', port = my_port) 
