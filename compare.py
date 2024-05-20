@@ -22,9 +22,16 @@ def get_name_options():
   query = "SELECT school FROM schoolstats ORDER BY school ASC";
   cur.execute(query)
     
-  rows = cur.fetchall()[0]
+  rows = cur.fetchall()
+
+  html= ""
+  for row in rows:
+    school = row[0]
+
+    #html = html = f'<option value="{school}">/option'
+    html = html + '\n'
   
-  return rows
+  return html
 
 #     html = ""
 #     for row in rows:
