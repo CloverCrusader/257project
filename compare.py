@@ -22,7 +22,7 @@ def get_name_options():
   query = "SELECT school FROM schoolstats ORDER BY school ASC";
   cur.execute(query)
     
-  rows = cur.fetchall()
+  rows = cur.fetchall()[0]
   
   return rows
 
