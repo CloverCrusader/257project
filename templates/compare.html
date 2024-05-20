@@ -28,8 +28,48 @@ CollegeFind
 </div>
 
 <div id="Ranking" class="tabcontent">
-  <h3>Ranking</h3>
-  <p>Ranking is the capital of France.</p> 
+  <h3><center>Rankings (according to U.S. News Report)</center></h3>
+  <div class="dropdown" onmouseover="dropDownFunction('rankingDropdown')" onmouseout="closeDropDownFunction('rankingDropdown')">
+  <button class="dropbtn">Filter by</button>
+  <div id="rankingDropdown" class="dropdown-content">
+    <button onclick="filterBy('acceptrate', 'max')"><a>Acceptance Rate (High)</a></button>
+    <button onclick="filterBy('acceptrate', 'min')"><a>Acceptance Rate (Low)</a></button>
+    <button onclick="filterBy('gradrate', 'max')"><a>Graduation Rate (High)</a></button>
+    <button onclick="filterBy('gradrate', 'min')"><a>Graduation Rate (Low)</a></button>
+    <button onclick="filterBy('gradrate', 'max')"><a>Tuition (High)</a></button>
+    <button onclick="filterBy('gradrate', 'min')"><a>Tuition (Low)</a></button>
+  </div>
+  </div> 
+  
+  <div class="dropdown" onmouseover="dropDownFunction('rankingDropdown')" onmouseout="closeDropDownFunction('rankingDropdown')">
+  
+  <button class="dropbtn">Estimate my Financial Aid</button>
+  <div id="moneyDropdown" class="dropdown-content">
+    <p>
+ My household income is:
+    </p>
+  <select name="cars" id="cars">
+    <option value="null">--</option>
+    <option value="0">less than 30k</option>
+    <option value="30">30k to 48k</option>
+    <option value="48">48k to 75k</option>
+    <option value="75">75k to 110k</option>
+    <option value="110">more than 110k</option>
+  </select>
+  <br> <br>
+  The college I am interested in is: <br>
+  <div class="dropdown">
+  <div id="collegeDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <a href="#Amherst College	">Amherst College</a>
+    <a href="#base">Base</a>
+    <a href="#blog">Blog</a>
+  </div>
+  <br>
+</div>
+  <input type="submit" value="Submit">
+</div>
+</div>
 </div>
 
 <div id="Compare" class="tabcontent">
