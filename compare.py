@@ -9,14 +9,15 @@ app = Flask(__name__)
 @app.route('/')
 
 def get_name_options():
- conn = psycopg2.connect(
-    host="localhost",
-    port=5432,  
-    database="rapaczs", # your sterns account
-    user="rapaczs", # your sterns usernam
-    password="chip979bond" # your low security password
- 
-cur = conn.cursor()
+
+  conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+
+    cur = conn.cursor()
 
     query = "SELECT * FROM schoolstats ORDER BY school ASC";
     cur.execute(query)
