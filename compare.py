@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 
 def get_name_options():
-    
+ conn = psycopg2.connect(
     host="localhost",
     port=5432,  
     database="rapaczs", # your sterns account
