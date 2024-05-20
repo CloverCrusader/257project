@@ -62,10 +62,6 @@ def get_name_options():
     
 #     cur = conn.cursor()
 
-    query = "INSERT INTO Employee (last, first) VALUES (%s, %s)";
-    cur.execute(query, (last_name, first_name))
-    conn.commit()
-
 
 if __name__ == '__main__':
     my_port = 5223
