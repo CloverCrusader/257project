@@ -1,0 +1,97 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Tahoma;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  font-family: Tahoma;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  font-family: Tahoma;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+  display: block;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<h2 class="title-class" id="title">
+CollegeFind
+</h2>
+<p>Explore the top 50 liberal arts colleges</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Ranking')">Ranking</button>
+  <button class="tablinks" onclick="openTab(event, 'Compare')">Compare</button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is the capital city of England.</p>
+</div>
+
+<div id="Ranking" class="tabcontent">
+  <h3><center>Rankings (according to U.S. News Report)</center></h3>
+  <div class="dropdown">
+    <button onclick="dropDownFunction('rankingDropdown')" class="dropbtn">Filter by</button>
+    <div id="rankingDropdown" class="tab">
+      <button onclick="filterBy('acceptrate', 'max')">Acceptance Rate (High)</button>
+      <button onclick="filterBy('acceptrate', 'min')">Acceptance Rate (Low)</button>
+      <button onclick="filterBy('gradrate', 'max')">Graduation Rate (High)</button>
+      <button onclick="filterBy('gradrate', 'min')">Graduation Rate (Low)</button>
+    </div>
+  </div> 
+  
+<div class="dropdown">
+    <button onclick="dropDownFunction('rankingDropdown')" class="dropbtn">Estimate my Financial Aid</button>
+    <div id="rankingDropdown" class="tab">
+    <p>
+    <center>My household income:</center>
+    </p>
+      <button onclick="filterBy('acceptrate', 'max')">Less than 30k</button>
+      <button onclick="filterBy('acceptrate', 'min')">Between 30k and 48k</button>
+      <button onclick="filterBy('gradrate', 'max')">Between 48k and 75k</button>
+      <button onclick="filterBy('gradrate', 'min')">Between 75k and 110k</button>
+      <button onclick="filterBy('gradrate', 'min')">More than 110k</button>
+    </div>
+  </div> 
+</div>
+
+<div id="Compare" class="tabcontent">
+  <h3>Compare</h3>
+  <p>Compare is the capital of Japan.</p>
+</div>
+   
+</body>
