@@ -6,7 +6,7 @@ import json;
 
 app = Flask(__name__)
 
-@app.route('/')
+
 
 def get_name_options():
 
@@ -32,6 +32,13 @@ def get_name_options():
     html = html + '\n'
   
   return html
+@app.route('/')
+def comparepg():
+
+  html_string = get_name_options()
+  return render_template("compare.html", DropdownOptions = html_string)
+
+  
 
 #     html = ""
 #     for row in rows:
