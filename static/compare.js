@@ -32,6 +32,6 @@ function filterFunction() {
 }
 
 function collegeName() {
-  dropdown = document.getElementById("college_name");
+  dropdown = document.getElementById("school");
  
   the_name.innerHTML = dropdown.value;
