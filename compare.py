@@ -28,7 +28,7 @@ def get_name_options():
   for row in rows:
     school = row[0]
 
-    #html = html = f'<option value="{school}">/option'
+    html = html + f'<option value="{school}">{school}</option>'
     html = html + '\n'
   
   return html
