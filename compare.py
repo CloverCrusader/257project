@@ -3,9 +3,9 @@ from flask import Flask
 from flask import render_template
 import psycopg2;
 import json;
-@app.route('/')
 app = Flask(__name__)
 
+@app.route('/')
 
 
 def get_name_options():
