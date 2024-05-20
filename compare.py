@@ -24,6 +24,8 @@ def get_name_options():
     
   rows = cur.fetchall()
 
+  return rows
+
 #     html = ""
 #     for row in rows:
 #         last = row[0]
