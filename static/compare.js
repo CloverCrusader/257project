@@ -15,3 +15,4 @@ function collegeName() {
   dropdown = document.getElementById("school");
  
   the_name.innerHTML = dropdown.value;
+}
