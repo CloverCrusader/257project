@@ -70,7 +70,12 @@ CollegeFind
 <div id="Compare" class="tabcontent">
   <h3>Compare</h3>
   <p>Compare is the capital of Japan.</p>
-  <div class="dropdown1" onmouseover="dropDownFunction('compareDropdown')" onmouseout="closeDropDownFunction('compareDropdown')">
-</div>
+<!--   <div class="dropdown1" onmouseover="dropDownFunction('compareDropdown')" onmouseout="closeDropDownFunction('compareDropdown')"> -->
+  <p class ="center-para">
+  Select a college here:
+<select id="college_name" onchange="updateCollege()">
+    {{DropdownOptions|safe}}
+</select>
+  </p>
    
 </body>
