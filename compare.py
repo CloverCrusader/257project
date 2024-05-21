@@ -35,7 +35,7 @@ def comparepg():
   html_string = get_name_options()
   return render_template("compare.html", DropdownOptions = html_string)
   
-@app.route('comparingStats')
+@app.route('/comparingStats')
 def comparingStats():
   return render_template("comparingStats.html")
   
