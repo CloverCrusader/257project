@@ -38,8 +38,10 @@ function collegeName() {
   college2 =  document.getElementById("college2");
   college1.innerHTML = dropdown.value;
   college2.innerHTML = dropdown.value;
+
 }
 
 function go(){
+	collegeName()
 	location.href="/comparingStats";
 }
