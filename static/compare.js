@@ -33,10 +33,10 @@ function filterFunction() {
 function updateCollege() {
   
   dropdown1 = document.getElementById("college1");
-  dropdown2 = document.getElementById("college2");
-
   first =  document.getElementById("college1Show")
   first.innerHTML = dropdown1.value;
+
+  dropdown2 = document.getElementById("college2");
   second =  document.getElementById("college2Show")
   second.innerHTML = dropdown2.value;
 
