@@ -32,12 +32,11 @@ function filterFunction() {
 }
 function updateCollege() {
   
-  dropdown = document.getElementById("school");
-	
-  firstCollege =  document.getElementById("college1");
-  secondCollege =  document.getElementById("college2");
-  firstCollege.innerHTML = dropdown.value;
-  secondCollege.innerHTML = dropdown.value;
+  dropdown1 = document.getElementById("college1");
+  dropdown2 = document.getElementById("college2");
+
+  firstCollege.innerHTML = dropdown1.value;
+  secondCollege.innerHTML = dropdown2.value;
 
 }
 
