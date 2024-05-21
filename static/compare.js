@@ -31,9 +31,13 @@ function filterFunction() {
   }
 }
 function collegeName() {
+  
   dropdown = document.getElementById("school");
- 
-  the_name.innerHTML = dropdown.value;
+	
+  college1 =  document.getElementById("college1");
+  college2 =  document.getElementById("college2");
+  college1.innerHTML = dropdown.value;
+  college2.innerHTML = dropdown.value;
 }
 
 function go(){
