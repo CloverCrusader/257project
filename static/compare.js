@@ -30,18 +30,17 @@ function filterFunction() {
     }
   }
 }
-function collegeName() {
+function updateCollege() {
   
   dropdown = document.getElementById("school");
 	
-  college1 =  document.getElementById("college1");
-  college2 =  document.getElementById("college2");
-  college1.innerHTML = dropdown.value;
-  college2.innerHTML = dropdown.value;
+  firstCollege =  document.getElementById("college1");
+  secondCollege =  document.getElementById("college2");
+  firstCollege.innerHTML = dropdown.value;
+  secondCollege.innerHTML = dropdown.value;
 
 }
 
 function go(){
-	collegeName()
 	location.href="/comparingStats";
 }
