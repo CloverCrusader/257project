@@ -35,8 +35,10 @@ function updateCollege() {
   dropdown1 = document.getElementById("college1");
   dropdown2 = document.getElementById("college2");
 
-  dropdown1.innerHTML = dropdown1.value;
-  dropdown2.innerHTML = dropdown2.value;
+  first =  document.getElementById("college1Show")
+  first.innerHTML = dropdown1.value;
+  second =  document.getElementById("college2Show")
+  second.innerHTML = dropdown2.value;
 
 }
 
