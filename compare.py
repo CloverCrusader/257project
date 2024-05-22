@@ -41,8 +41,8 @@ def get_college_stats(college1, college2):
         password="chip979bond")
     
   query = """
-        SELECT * FROM college_stats
-        WHERE college_name IN (%s, %s)
+        SELECT * FROM schoolstats
+        WHERE school IN (%s, %s)
     """
     cursor.execute(query, (college1, college2))
     results = cursor.fetchall()
