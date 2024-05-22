@@ -52,7 +52,7 @@ def rankQuery():
             graduation = school[4]
             major = school[5]
             # I do not know how to make the following fit in 120 columns without breaking it.
-            html = html + f'<p> School: {name},Location: {state}, Average Tuition: {tuition}, Acceptance Rate: {acceptance}, Graduation Rate: {graduation}, Largest Major: {major} </p>\n'
+            html = html + f'<p> School: {name}, Location: {state}, Average Tuition: {tuition}, Acceptance Rate: {acceptance}, Graduation Rate: {graduation}, Largest Major: {major} </p>\n'
 
     return flask.render_template("", rankedSchools = html)
     
