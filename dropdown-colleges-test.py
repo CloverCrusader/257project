@@ -16,17 +16,16 @@ def get_name_options():
     
     cur = conn.cursor()
 
-    query = "SELECT school FROM schoolstats ORDER BY school ASC";
+    query = 'SELECT school FROM schoolstats ORDER BY school;'
     cur.execute(query)
     
     rows = cur.fetchall()
 
     html = ""
     for row in rows:
-        last = row[0]
-        first = row[1]
+        school = row[0]
         
-        html = html + f'<option value="{first} {last}">{last}</option>'
+        html = html + f'<option value="{school}">{school}</option>'
         html = html + '\n'
     
     return html
