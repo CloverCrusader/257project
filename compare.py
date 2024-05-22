@@ -40,7 +40,7 @@ def get_college_stats(college1, college2):
         user="rapaczs",
         password="chip979bond")
     
-  query = """
+    query = """
         SELECT * FROM schoolstats
         WHERE school IN (%s, %s)
     """
