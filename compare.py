@@ -52,8 +52,8 @@ def get_college_stats(college1, college2):
 
 @app.route('/comparingStats')
 def comparing_stats():
-    college1 = request.args.get('college1')
-    college2 = request.args.get('college2')
+    college1 = request.args.get('college1Show')
+    college2 = request.args.get('college2Show')
     stats = get_college_stats(college1, college2)
     return render_template("comparingStats.html", stats=stats)
     
