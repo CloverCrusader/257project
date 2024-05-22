@@ -45,8 +45,8 @@ def get_college_stats(college1, college2):
         SELECT * FROM schoolstats
         WHERE school IN (%s, %s)
     """
-    cursor.execute(query, (college1, college2))
-    results = cursor.fetchall()
+    cur.execute(query, (college1, college2))
+    results = cur.fetchall()
     conn.close()
     return results
 
