@@ -7,7 +7,6 @@ app = Flask(__name__)
 
 
 def get_name_options():
-    
     conn = psycopg2.connect(
         host="localhost",
         port=5432,  
@@ -26,12 +25,8 @@ def get_name_options():
     for row in rows:
         last = row[0]
         first = row[1]
-
-        #Here is more info on Python's Formatted Strings
-        #    https://docs.python.org/3/tutorial/inputoutput.html
+        
         html = html + f'<option value="{first} {last}">{last}</option>'
-
-        #Backslash n in a string means New Line
         html = html + '\n'
     
     return html
@@ -43,11 +38,6 @@ def welcome():
 
     html_string = get_name_options()
 
-
-    # IMPORTANT: The only reason that this works is because
-    #   In the Template, I marked DropdownOptions as "Safe"
-    #   This tells Flasks that it is safe to insert HTML code into that
-    #   location in the template
     return render_template("homepage.html", DropdownOptions = html_string)
 
 
