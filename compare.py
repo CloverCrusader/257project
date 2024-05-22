@@ -53,10 +53,9 @@ def get_college_stats(college1, college2):
 def comparing_stats():
     college1 = request.args.get('college1')
     college2 = request.args.get('college2')
-    if college1 and college2:
-        stats = get_college_stats(college1, college2)
-        return render_template("comparingStats.html", stats=stats)
-    return render_template("comparingStats.html", stats=None)
+    stats = get_college_stats(college1, college2)
+    return render_template("comparingStats.html", stats=stats)
+    
 
 
 if __name__ == '__main__':
