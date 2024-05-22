@@ -4,7 +4,7 @@ import psycopg2;
 import json;
 app = Flask(__name__)
 
-@app.route('/aimee')
+@app.route('/')
 def aimee_test_pg():
   html_string = get_name_options()
   return render_template("aimee-test.html", DropdownOptions = html_string)
