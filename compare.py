@@ -1,6 +1,6 @@
 
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 import psycopg2;
 import json;
 app = Flask(__name__)
