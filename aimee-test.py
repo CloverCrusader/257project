@@ -42,5 +42,5 @@ def aimee_stats():
 
 
 if __name__ == '__main__':
-    my_port = 5432
+    my_port = 5232
     app.run(host='0.0.0.0', port = my_port)
