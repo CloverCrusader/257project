@@ -1,5 +1,5 @@
 
-from flask import Flask
+from flask import Flask, session
 from flask import render_template, request
 import psycopg2;
 import json;
