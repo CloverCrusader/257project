@@ -39,6 +39,7 @@ def get_college_stats(college1, college2):
         database="rapaczs",
         user="rapaczs",
         password="chip979bond")
+    cur = conn.cursor()
     
     query = """
         SELECT * FROM schoolstats
