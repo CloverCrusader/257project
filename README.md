@@ -1,1 +1,1 @@
-Hello! Its Frida and Aimee :)
+Hello! Our team is Frida, Phi, Michalea, and Aimee :)
