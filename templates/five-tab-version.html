@@ -81,15 +81,15 @@ CollegeFind
      
      <p>The college I am interested in is:</p>
         <select name="colleges" id="colleges">
-           <option value="null">--</option>
-           <option value="Amherst">Amherst College</option>
+           {<option value="null">--</option>
+           <option value="school">Amherst College</option>
            <option value="Barnard">Barnard College</option>
            <option value="Bates">Bates College</option>
            <option value="Berea">Berea College</option>
            <option value="Bowdoin">Bowdoin College</option>
            <option value="Bryn">Bryn Mawr College</option>
-           <option value="Bucknell">Bucknell College</option>
-
+           <option value="Bucknell">Bucknell College</option>}
+<!--{{DropdownOptions|safe}}]}--> 
         </select>
      <br><br>
      <button onclick="getInput('income', 'college')">Submit</button>
