@@ -1,6 +1,6 @@
 .title-class{
   text-align: center;
-  color: purple;
+  color: #662d91;
 }
 
 .my-class{
@@ -13,7 +13,7 @@
   color: white;
 }
 .dropbtn {
-  background-color: #04AA6D;
+  background-color: #662d91;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -64,7 +64,7 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  background-color: #662d91;
   border: none;
 }
 
