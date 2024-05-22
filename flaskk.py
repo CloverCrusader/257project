@@ -14,6 +14,7 @@ rankOptions = [maxTuition, minTuition, maxAcceptance, minAcceptance, maxGradrate
 
 @app.route('/rankings')
 def rankings():
+
     return flask.render_template("ranking-test.html")
 
 @app.route('/rankings/<index>')
@@ -56,10 +57,20 @@ def rankQuery():
 
     return flask.render_template("", rankedSchools = html)
     
+@app.route('/compare')
+def compare():
 
+  html_string = get_name_options()
+  return flask.render_template("compare.html", DropdownOptions = html_string)
+
+@app.route('/comparingStats') # update naming conventions throughout files to be in line with convention
+def comparingStats():
+
+  return flask.render_template("comparingStats.html")
 
 @app.route('/')
 def home():
+
     return flask.render_template("home.html")
 
 if __name__ == '__main__':

@@ -29,6 +29,7 @@ def get_name_options():
     html = html + '\n'
   
   return html
+
 @app.route('/')
 def comparepg():
 
@@ -37,6 +38,7 @@ def comparepg():
   
 @app.route('/comparingStats')
 def comparingStats():
+  
   return render_template("comparingStats.html")
   
 
