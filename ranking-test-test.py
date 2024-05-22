@@ -10,14 +10,14 @@ def get_name_options():
     
     conn = psycopg2.connect(
         host="localhost",
-        port=5432,
-        database="------",
-        user="----",
-        password="-------")
+        port=5432,  
+        database="rapaczs", 
+        user="rapaczs",
+        password="chip979bond")
     
     cur = conn.cursor()
 
-    query = "SELECT college FROM table name ORDER BY college ASC";
+    query = "SELECT school FROM schoolstats ORDER BY school ASC";
     cur.execute(query)
     
     rows = cur.fetchall()
@@ -52,5 +52,5 @@ def welcome():
 
 
 if __name__ == '__main__':
-    my_port = 5121
+    my_port = 5432
     app.run(host='0.0.0.0', port = my_port) 
