@@ -52,5 +52,5 @@ function go(){
 	url ="/comparingStats/" + college1 + "/" + college2;
 	console.log(url);
 	
-	//location.href = url;
+	location.href = url;
 }
