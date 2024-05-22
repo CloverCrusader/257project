@@ -38,7 +38,7 @@ def get_name_options():
     html = html + f'<option value="{school}">{school}</option>'
     html = html + '\n'
   return html
-
+"""
 @app.route('/')
 def compare_pg():
   html_string = get_name_options()
@@ -68,6 +68,7 @@ def comparing_stats():
   
     stats = get_college_stats(college1, college2)
     return render_template("comparingStats.html", stats=stats)
+    """
 
 if __name__ == '__main__':
     my_port = 5232
