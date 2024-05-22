@@ -12,6 +12,25 @@ function openTab(evt, tabName) {
   evt.currentTarget.className += " active";
 }
 
-function dropDownFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+
+function dropDownFunction(dropdownId) {
+  document.getElementById(dropdownId).classList.toggle("show");
+}
+
+function closeDropDownFunction(dropdownId) {
+  document.getElementById(dropdownId).classList.remove("show");
+}
+function filterFunction() {
+  const input = document.getElementById("myInput");
+  const filter = input.value.toUpperCase();
+  const div = document.getElementById("collegeDropdown");
+  const a = div.getElementsByTagName("a");
+  for (let i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
 }
