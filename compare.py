@@ -49,11 +49,8 @@ def get_college_stats(college1, college2):
     conn.close()
     return results
 
-@app.route('/comparingStats')
-def comparing_stats():
-    college1 = request.args.get('college1')
-    college2 = request.args.get('college2')
-  
+@app.route('/comparingStats/<college1>/<college2>')
+def comparing_stats(college1, college2):
     stats = get_college_stats(college1, college2)
     return render_template("comparingStats.html", stats=stats)
     
