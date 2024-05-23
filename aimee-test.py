@@ -40,7 +40,6 @@ def get_college_stats(income, colleges):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-  household_income = "income"
   
 query = f"SELECT {income} FROM financialaid WHERE school = %s" 
     cur.execute(query, (colleges,))
