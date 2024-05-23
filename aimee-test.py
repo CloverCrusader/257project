@@ -72,17 +72,6 @@ def get_major_stats(major):
 def displayMajors(major):
     stats = get_major_stats(major)
     return render_template("aimee-display-test.html", stats=stats)
-    
-  """query = f'SELECT school FROM schoolstats WHERE popmajor = %s' 
-    cur.execute(query, (major))
-    results = cur.fetchall()
-    conn.close()
-    return results
-
-@app.route('/popularMajor/<major>')
-def displayMajors(major):
-    stats = get_major_stats(major)
-    return render_template("aimee-display-test.html", stats=stats)"""
 
 if __name__ == '__main__':
     my_port = 5223
