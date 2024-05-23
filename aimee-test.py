@@ -31,6 +31,29 @@ def compare_pg():
   html_string = get_name_options()
   return render_template("aimee-test.html", DropdownOptions = html_string)
 
+
+def get_college_stats(income, colleges):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    
+    query = """
+        SELECT * FROM schoolstats WHERE school IN (%s, %s)
+    """
+    cur.execute(query, (college1, college2))
+    results = cur.fetchall()
+    conn.close()
+    return results
+
+@app.route('/financialAid/<income>/<colleges>')
+def comparing_stats(income, colleges):
+    stats = get_college_stats(income, colleges)
+    return render_template("aimee-display-test.html", stats=stats)
+
 if __name__ == '__main__':
     my_port = 5223
     app.run(host='0.0.0.0', port = my_port) 
