@@ -29,7 +29,7 @@ function updateCollege() {
 function go(){
 	location.href="/comparingStats";
 }
-
+/**
 function getIncomeValue() {
     var selectElement = document.getElementById("income");
     var selectedValue = selectElement.value;
@@ -44,4 +44,16 @@ function getCollegeValue() {
     text =  document.getElementById("collegeText")
     text.innerHTML = selectedValue;
     console.log("Selected college value: " + selectedValue);
+}
+*/
+function updateFinancialAid() {
+  
+  incomeDropdown = document.getElementById("income");
+  incomeText =  document.getElementById("incomeText")
+  incomeText.innerHTML = incomeDropdown.value;
+
+  collegeDropdown = document.getElementById("colleges");
+  collegeText =  document.getElementById("collegeText")
+  collegeText.innerHTML = collegeDropdown.value;
+
 }
