@@ -72,11 +72,11 @@ function submit(){
 }
 
 function submitMajor() {
-    var majorDropdown = document.getElementById("major");
-    var major = majorDropdown.value;
+	majorDropdown = document.getElementById("major");
+	major = majorDropdown.value;
     
     if (major !== "null") {
-        var url = "/popularMajor/" + major;
+	url = "/popularMajor/" + major;
         console.log(url);
         location.href = url;
     } else {
