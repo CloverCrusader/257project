@@ -58,7 +58,7 @@ CollegeFind
    <p>Based on the data collected by ___, who recorded past student tuitions. No guareentee :)</p>
      
      <p> My household income is: </p>
-     <select name="income" id="income" onchange="UpdateFinancialAid()">
+     <select name="income" id="income" onchange="updateFinancialAid()">
            <option value="null">--</option>
            <option value="f0to30grand">less than 30k</option>
            <option value="f30to48grand">30k to 48k</option>
@@ -70,8 +70,8 @@ CollegeFind
      <br>
      
      <p>The college I am interested in is:</p>
-        <select name="colleges" id="colleges" onchange="UpdateFinancialAid()">
-        {{DropdownOptions|safe}}
+        <select id="colleges" onchange="updateFinancialAid()">
+             {{DropdownOptions|safe}}
         </select>
         
       <p style="text-align: center;">You selected this income from the Drop Down: <b id="collegeText"> ____ </b></p>
