@@ -60,7 +60,7 @@ def get_major_stats(major):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT school FROM schoolstats WHERE major = %s" 
+    query = f"SELECT school FROM schoolstats WHERE popmajor = %s" 
     cur.execute(query, (major))
     results = cur.fetchall()
     conn.close()
@@ -68,7 +68,7 @@ def get_major_stats(major):
 
 @app.route('/popularMajor/<major>')
 def displayMajors(major):
-    stats = get_major_stats(income, colleges)
+    stats = get_major_stats(major)
     return render_template("aimee-display-test.html", stats=stats)
 
 if __name__ == '__main__':
