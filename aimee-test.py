@@ -52,6 +52,25 @@ def comparing_stats(income, colleges):
     stats = get_college_stats(income, colleges)
     return render_template("aimee-display-test.html", stats=stats)
 
+def get_major_stats(major):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    query = f"SELECT school FROM schoolstats WHERE major = %s" 
+    cur.execute(query, (major))
+    results = cur.fetchall()
+    conn.close()
+    return results
+
+@app.route('/popularMajor/<major>')
+def displayMajors(major):
+    stats = get_major_stats(income, colleges)
+    return render_template("aimee-display-test.html", stats=stats)
+
 if __name__ == '__main__':
     my_port = 5223
     app.run(host='0.0.0.0', port = my_port) 
