@@ -70,3 +70,13 @@ function submit(){
 	
 	location.href = url;
 }
+
+function majorSubmit(){
+	majorDropdown = document.getElementById("major")
+	major = majorDropdown.value;
+	
+	url ="/popularMajor/" + major;
+	console.log(url);
+	
+	location.href = url;
+}
