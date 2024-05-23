@@ -73,7 +73,7 @@ def displayMajors(major):
     stats = get_major_stats(major)
     return render_template("aimee-display-test.html", stats=stats)
     
-  """query = f"SELECT school FROM schoolstats WHERE popmajor = %s" 
+  """query = f'SELECT school FROM schoolstats WHERE popmajor = %s' 
     cur.execute(query, (major))
     results = cur.fetchall()
     conn.close()
