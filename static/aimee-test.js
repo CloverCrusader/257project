@@ -57,3 +57,16 @@ function updateFinancialAid() {
   collegeText.innerHTML = collegeDropdown.value;
 
 }
+
+function submit(){
+	incomeDropdown = document.getElementById("income")
+	income = incomeDropdown.value;
+
+	collegeDropdown = document.getElementById("colleges")
+	colleges = collegeDropdown.value;
+	
+	url ="/financialAid/" + income + "/" + colleges;
+	console.log(url);
+	
+	location.href = url;
+}
