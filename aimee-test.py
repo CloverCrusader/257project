@@ -71,7 +71,7 @@ def get_major_stats(major):
 @app.route('/popularMajor/<major>')
 def displayMajors(major):
     stats = get_major_stats(major)
-    return render_template("aimee-display-test.html", stats=stats)
+    return render_template("popularMajor.html", stats=stats)
 
 if __name__ == '__main__':
     my_port = 5223
