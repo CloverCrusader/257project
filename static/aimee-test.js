@@ -80,3 +80,11 @@ function majorSubmit(){
 	
 	location.href = url;
 }
+
+function updateMajor() {
+  
+  majorDropdown = document.getElementById("major");
+  majorText =  document.getElementById("majorText")
+  majorText.innerHTML = majorDropdown.value;
+
+}
