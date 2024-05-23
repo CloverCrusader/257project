@@ -52,6 +52,8 @@ def comparing_stats(income, colleges):
     stats = get_college_stats(income, colleges)
     return render_template("aimee-display-test.html", stats=stats)
 
+
+
 def get_major_stats(major):
     conn = psycopg2.connect(
         host="localhost",
@@ -60,8 +62,9 @@ def get_major_stats(major):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT school FROM schoolstats WHERE popmajor = %s" 
-    cur.execute(query, (major))
+
+    query = "SELECT school FROM schoolstats WHERE popmajor = %s"
+    cur.execute(query, (major,))
     results = cur.fetchall()
     conn.close()
     return results
@@ -70,6 +73,17 @@ def get_major_stats(major):
 def displayMajors(major):
     stats = get_major_stats(major)
     return render_template("aimee-display-test.html", stats=stats)
+    
+  """query = f"SELECT school FROM schoolstats WHERE popmajor = %s" 
+    cur.execute(query, (major))
+    results = cur.fetchall()
+    conn.close()
+    return results
+
+@app.route('/popularMajor/<major>')
+def displayMajors(major):
+    stats = get_major_stats(major)
+    return render_template("aimee-display-test.html", stats=stats)"""
 
 if __name__ == '__main__':
     my_port = 5223
