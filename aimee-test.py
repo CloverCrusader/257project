@@ -4,24 +4,11 @@ import psycopg2;
 import json;
 app = Flask(__name__)
 
-@app.route('/')
-def aimee_test_pg():
-  html_string = get_name_options()
-  return render_template("aimee-test.html", DropdownOptions = html_string)
-
-@app.route('/aimeeStats')
-def aimee_stats():
-    income = request.args.get('income')
-    colleges = request.args.get('colleges')
-  
-    stats = get_college_stats(income, colleges)
-    return render_template("aimee-test.html", stats=stats)
-    
 def get_name_options():
 
   conn = psycopg2.connect(
         host="localhost",
-        port=5232,
+        port=5432,
         database="rapaczs",
         user="rapaczs",
         password="chip979bond")
@@ -39,6 +26,11 @@ def get_name_options():
     html = html + '\n'
   return html
 
+@app.route('/')
+def compare_pg():
+  html_string = get_name_options()
+  return render_template("aimee-test.html", DropdownOptions = html_string)
+
 if __name__ == '__main__':
-    my_port = 5232
-    app.run(host='0.0.0.0', port = my_port)
+    my_port = 5223
+    app.run(host='0.0.0.0', port = my_port) 
