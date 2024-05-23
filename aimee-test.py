@@ -42,12 +42,13 @@ def get_college_stats(income, colleges):
     cur = conn.cursor()
     
     query = """
-        SELECT * FROM schoolstats WHERE school IN (%s, %s)
+        SELECT ___ FROM financialaid WHERE school=" ";
     """
-    cur.execute(query, (college1, college2))
+    cur.execute(query)
     results = cur.fetchall()
+    aid = results[1]
     conn.close()
-    return results
+    return aid
 
 @app.route('/financialAid/<income>/<colleges>')
 def comparing_stats(income, colleges):
