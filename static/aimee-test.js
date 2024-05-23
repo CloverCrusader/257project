@@ -71,7 +71,25 @@ function submit(){
 	location.href = url;
 }
 
-function majorSubmit(){
+function submitMajor() {
+    var majorDropdown = document.getElementById("major");
+    var major = majorDropdown.value;
+    
+    if (major !== "null") {
+        var url = "/popularMajor/" + major;
+        console.log(url);
+        location.href = url;
+    } else {
+        alert("Please select a major.");
+    }
+}
+
+function updateMajor() {
+    var majorDropdown = document.getElementById("major");
+    var majorText = document.getElementById("majorText");
+    majorText.innerHTML = majorDropdown.value;
+}
+/**function majorSubmit(){
 	majorDropdown = document.getElementById("major")
 	major = majorDropdown.value;
 	
@@ -87,4 +105,4 @@ function updateMajor() {
   majorText =  document.getElementById("majorText")
   majorText.innerHTML = majorDropdown.value;
 
-}
+}*/
