@@ -132,6 +132,7 @@
       height: 200px;
       border-radius: 10px;
       margin-bottom: 15px;
+      object-fit: cover;
     }
 
   .school-info {
