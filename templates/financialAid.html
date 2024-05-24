@@ -6,29 +6,9 @@
 <body>
 <h2 class="title-class" id="title"> Your Estimated Financial Aid </h2>
 <p>Down below are some basic school stats</p>
-  {% if stats %}
-      <table>
-          <thead>
-               <tr>
-                  <th>College Name</th>
-                  <th>State of School</th>
-                  <th>Acceptance Rate</th>
-                  <th>Graduation Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for stat in stats %}
-                    <tr>
-                        <td>{{ stat[1] }}</td> 
-                        <td>{{ stat[0] }}</td> 
-                        <td>{{ stat[3] }}</td> 
-                        <td>{{ stat[4] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No data available for the selected colleges.</p>
-
-    {% endif %}
+{% if aid %}
+ <p>The financial aid amount is {{ aid }}</p>
+ {% else %}
+ <p>No financial aid imformation is available for this college or income range</p>
+ {% endif %}
 </body>
