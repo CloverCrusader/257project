@@ -91,26 +91,3 @@ function submitMajor() {
         alert("Please select a major.");
     }
 }
-
-/**function updateMajor() {
-    var majorDropdown = document.getElementById("major");
-    var majorText = document.getElementById("majorText");
-    majorText.innerHTML = majorDropdown.value; */
-}
-/**function majorSubmit(){
-	majorDropdown = document.getElementById("major")
-	major = majorDropdown.value;
-	
-	url ="/popularMajor/" + major;
-	console.log(url);
-	
-	location.href = url;
-}
-
-function updateMajor() {
-  
-  majorDropdown = document.getElementById("major");
-  majorText =  document.getElementById("majorText")
-  majorText.innerHTML = majorDropdown.value;
-
-}*/
