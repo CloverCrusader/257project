@@ -28,7 +28,7 @@
 <p>{{rate}} for colleges by high low </p>
 
 <div class="container">
- {% for school, state, acceptrate in stats %}
+ {% for school, state, {rate} in stats %}
  <div class="box">{{school}}, {{state}}, {{rate}}</div>
  {% endfor %}
 </div>
