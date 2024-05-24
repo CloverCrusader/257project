@@ -62,7 +62,7 @@ def get_major_stats(major):
         password="chip979bond")
     cur = conn.cursor()
     query = f"SELECT school FROM schoolstats WHERE popmajor = %s"
-    cur.execute(query, (major))
+    cur.execute(query, (major,))
     results = cur.fetchall()
     conn.close()
     return results
