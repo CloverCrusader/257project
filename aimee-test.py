@@ -39,8 +39,8 @@ def get_ranking_stats(rate, lowhigh):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT %s FROM schoolstats ORDER BY %s" 
-    cur.execute(query, (rate, lowhigh))
+    query = f"SELECT {rate} FROM schoolstats ORDER BY {lowhigh}" 
+    cur.execute(query)
     results = cur.fetchall()
     conn.close()
     return results
