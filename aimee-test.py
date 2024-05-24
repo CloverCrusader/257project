@@ -50,7 +50,7 @@ def get_college_stats(income, colleges):
 @app.route('/financialAid/<income>/<colleges>')
 def comparing_stats(income, colleges):
     stats = get_college_stats(income, colleges)
-    return render_template("aimee-display-test.html", stats=stats)
+    return render_template("popularMajor.html", stats=stats)
 
 
 
