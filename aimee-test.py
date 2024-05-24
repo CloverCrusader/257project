@@ -30,6 +30,27 @@ def get_name_options():
 def compare_pg():
   html_string = get_name_options()
   return render_template("aimee-test.html", DropdownOptions = html_string)
+#------------------------------------------------------------------------
+def get_ranking_stats(income, colleges):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    query = f"SELECT %s FROM financialaid WHERE school = %s" 
+    cur.execute(query, (income, colleges))
+    results = cur.fetchall()
+    aid = results[0]
+    conn.close()
+    return aid
+
+@app.route('/financialAid/<income>/<colleges>')
+def comparing_stats(income, colleges):
+    aid = get_ranking_stats(income, colleges)
+    return render_template("rankings.html", aid=aid)
+#------------------------------------------------------------------------
 
 
 def get_college_stats(income, colleges):
@@ -71,6 +92,7 @@ def get_major_stats(major):
 def displayMajors(major):
     stats = get_major_stats(major)
     return render_template("popularMajor2.html", stats=stats, major=major)
+
 
 if __name__ == '__main__':
     my_port = 5223
