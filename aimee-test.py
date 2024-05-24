@@ -53,7 +53,6 @@ def comparing_stats(income, colleges):
     return render_template("popularMajor.html", stats=stats)
 
 
-
 def get_major_stats(major):
     conn = psycopg2.connect(
         host="localhost",
@@ -62,7 +61,7 @@ def get_major_stats(major):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = "SELECT school FROM schoolstats WHERE popmajor = %s;"
+    query = f"SELECT school FROM schoolstats WHERE popmajor = %s"
     cur.execute(query, (major))
     results = cur.fetchall()
     conn.close()
