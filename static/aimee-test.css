@@ -8,6 +8,10 @@
   color: blue;
 }
 
+.invisible{
+  color: white;
+}
+
 .another-class{
   background-color: black;
   color: white;
