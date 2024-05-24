@@ -46,6 +46,31 @@ function getCollegeValue() {
     console.log("Selected college value: " + selectedValue);
 }
 */
+
+function updateRankings() {
+  
+  rateDropdown = document.getElementById("rate");
+  rateText =  document.getElementById("rateText")
+  rateText.innerHTML = rateDropdown.value;
+
+  low-highDropdown = document.getElementById("low-high");
+  low-highText =  document.getElementById("low-highText")
+  low-highText.innerHTML = low-highDropdown.value;
+
+}
+
+function submitRankings(){
+	rateDropdown = document.getElementById("rate")
+	rate = rateDropdown.value;
+
+	low-highDropdown = document.getElementById("low-high")
+	low-high = low-highDropdown.value;
+	
+	url ="/rankings/" + rate + "/" + low-high;
+	console.log(url);
+	
+	location.href = url;
+}
 function updateFinancialAid() {
   
   incomeDropdown = document.getElementById("income");
