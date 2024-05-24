@@ -49,10 +49,29 @@ def get_college_stats(college1, college2):
     conn.close()
     return results
 
+def get_college_aid(college1, college2):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    
+    query = """
+        SELECT * FROM financialaid WHERE school IN (%s, %s)
+    """
+    cur.execute(query, (college1, college2))
+    results = cur.fetchall()
+    conn.close()
+    return results
+
+
 @app.route('/comparingStats/<college1>/<college2>')
 def comparing_stats(college1, college2):
     stats = get_college_stats(college1, college2)
-    return render_template("comparingStats.html", stats=stats)
+    aid = get_college_aid(college1, college2)
+    return render_template("comparingStats.html", stats=stats, aid=aid)
     
 
 
