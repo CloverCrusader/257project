@@ -64,7 +64,7 @@ function submitRankings(){
 	rate = rateDropdown.value;
 
 	lowhighDropdown = document.getElementById("lowhigh")
-	lowhigh = low-highDropdown.value;
+	lowhigh = lowhighDropdown.value;
 	
 	url ="/rankings/" + rate + "/" + lowhigh;
 	console.log(url);
