@@ -28,12 +28,9 @@
 <p>The colleges with your chosen major as the most popular</p>
 
 <div class="container">
-  <div class="box">Carleton College, MN</div>
-  <div class="box">Harvard University, MA</div>
-  <div class="box">Stanford University, CA</div>
-  <div class="box">Massachusetts Institute of Technology, MA</div>
-  <div class="box">University of California, Berkeley, CA</div>
-  <div class="box">University of Oxford, UK</div>
+{% for school, state in stats % }
+ <div class="box">{{school}}, {{state}}</div>
+ {% endfor %}
 </div>
 
 </body>
