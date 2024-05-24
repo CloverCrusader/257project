@@ -14,7 +14,7 @@ def get_name_options():
         password="chip979bond")
   cur = conn.cursor()
 
-  query = "SELECT school FROM schoolstats ORDER BY school ASC";
+  query = "SELECT school, state, {rate} FROM schoolstats ORDER BY school ASC";
   cur.execute(query)
   rows = cur.fetchall()
 
@@ -39,7 +39,7 @@ def get_ranking_stats(rate, lowhigh):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT * FROM schoolstats ORDER BY {rate} {lowhigh}" 
+    query = f"SELECT school, state, {rate} FROM schoolstats ORDER BY {rate} {lowhigh}" 
     cur.execute(query)
     results = cur.fetchall()
     conn.close()
