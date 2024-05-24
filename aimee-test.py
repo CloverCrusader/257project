@@ -14,7 +14,7 @@ def get_name_options():
         password="chip979bond")
   cur = conn.cursor()
 
-  query = "SELECT school, state, {rate} FROM schoolstats ORDER BY school ASC";
+  query = "SELECT school, state FROM schoolstats ORDER BY school ASC";
   cur.execute(query)
   rows = cur.fetchall()
 
