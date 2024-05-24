@@ -71,6 +71,14 @@ function submit(){
 	location.href = url;
 }
 
+function updateMajor() {
+  
+  majorDropdown = document.getElementById("major");
+  majorText =  document.getElementById("majorText")
+  majorText.innerHTML = majorDropdown.value;
+	
+}
+
 function submitMajor() {
 	majorDropdown = document.getElementById("major");
 	major = majorDropdown.value;
@@ -84,10 +92,10 @@ function submitMajor() {
     }
 }
 
-function updateMajor() {
+/**function updateMajor() {
     var majorDropdown = document.getElementById("major");
     var majorText = document.getElementById("majorText");
-    majorText.innerHTML = majorDropdown.value;
+    majorText.innerHTML = majorDropdown.value; */
 }
 /**function majorSubmit(){
 	majorDropdown = document.getElementById("major")
