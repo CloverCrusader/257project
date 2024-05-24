@@ -28,8 +28,8 @@
 <p>{{rate}} for colleges by high low </p>
 
 <div class="container">
- {% for school, state, rate_value in stats %}
- <div class="box">{{school}}, {{state}}, {{rate}}: {{rate_value}}%</div>
+ {% for school, state, rate in stats %}
+ <div class="box">{{loop.index}}. {{school}}, {{state}} <br>{{rate}%</div>
  {% endfor %}
 </div>
 <br>
