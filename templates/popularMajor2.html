@@ -28,7 +28,7 @@
 <p>The colleges with your chosen major as the most popular</p>
 
 <div class="container">
-{% for school, state in stats % }
+ {% for school, state in stats %}
  <div class="box">{{school}}, {{state}}</div>
  {% endfor %}
 </div>
