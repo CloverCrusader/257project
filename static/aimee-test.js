@@ -58,7 +58,7 @@ function updateFinancialAid() {
 
 }
 
-function submit(){
+function submitFinancialAid(){
 	incomeDropdown = document.getElementById("income")
 	income = incomeDropdown.value;
 
