@@ -31,7 +31,7 @@ def compare_pg():
   html_string = get_name_options()
   return render_template("aimee-test.html", DropdownOptions = html_string)
 #------------------------------------------------------------------------
-def get_ranking_stats(income, colleges):
+def get_ranking_stats(rate, low-high):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -39,17 +39,16 @@ def get_ranking_stats(income, colleges):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT %s FROM financialaid WHERE school = %s" 
-    cur.execute(query, (income, colleges))
+    query = f"SELECT %s FROM schoolstats ORDER BY %s" 
+    cur.execute(query, (rate, low-high))
     results = cur.fetchall()
-    aid = results[0]
     conn.close()
-    return aid
+    return results
 
-@app.route('/financialAid/<income>/<colleges>')
-def comparing_stats(income, colleges):
-    aid = get_ranking_stats(income, colleges)
-    return render_template("rankings.html", aid=aid)
+@app.route('/rankings/<rate>/<low-high>')
+def displayRanking(major):
+    stats = get_ranking_stats(rate, low-high)
+    return render_template("rankings2.html", stats=stats)
 #------------------------------------------------------------------------
 
 
