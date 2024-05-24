@@ -124,7 +124,7 @@
   background-color: #CBC3E3;
   border: 15px #CBC3E3;
   padding: 50px;
-  flex: 1 1 calc(33.333% - 40px); /* three boxes per row with gap accounted for */
+  flex: 1 1 calc(25% - 40px); /* four boxes per row with gap accounted for */
   box-sizing: border-box;
   border-radius: 25px;
 }
