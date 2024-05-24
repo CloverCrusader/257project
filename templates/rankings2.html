@@ -19,6 +19,16 @@
   flex: 1 1 calc(33.333% - 40px); /* three boxes per row with gap accounted for */
   box-sizing: border-box;
 }
+.school-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+  .school-info {
+      text-align: center;
+    }
 </style>
 </head>
 <body>
@@ -29,7 +39,10 @@
 
 <div class="container">
  {% for school, state, rate in stats %}
- <div class="box">{{loop.index}}. {{school}}, {{state}} <br>{{rate}}%</div>
+  <div class="box">
+  <img src="/static/images/{{ school | replace(' ', '_') }}.jpg" alt="{{ school }} Image" class="school-image">
+    <div class="school-info">
+ <strong>{{loop.index}}. {{school}}, {{state}} <br>{{rate}}%</strong></div>
  {% endfor %}
 </div>
 <br>
