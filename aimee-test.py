@@ -49,8 +49,8 @@ def get_college_stats(income, colleges):
 
 @app.route('/financialAid/<income>/<colleges>')
 def comparing_stats(income, colleges):
-    stats = get_college_stats(income, colleges)
-    return render_template("financialAid.html", stats=stats)
+    aid = get_college_stats(income, colleges)
+    return render_template("financialAid.html", aid=aid)
 
 
 def get_major_stats(major):
