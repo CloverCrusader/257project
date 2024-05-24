@@ -61,7 +61,7 @@ def get_major_stats(major):
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    query = f"SELECT school FROM schoolstats WHERE popmajor = %s"
+    query = f"SELECT school, state FROM schoolstats WHERE popmajor = %s"
     cur.execute(query, (major,))
     results = cur.fetchall()
     conn.close()
@@ -70,7 +70,7 @@ def get_major_stats(major):
 @app.route('/popularMajor/<major>')
 def displayMajors(major):
     stats = get_major_stats(major)
-    return render_template("popularMajor.html", stats=stats)
+    return render_template("popularMajor2.html", stats=stats)
 
 if __name__ == '__main__':
     my_port = 5223
