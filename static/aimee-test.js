@@ -53,9 +53,9 @@ function updateRankings() {
   rateText =  document.getElementById("rateText")
   rateText.innerHTML = rateDropdown.value;
 
-  low-highDropdown = document.getElementById("low-high");
-  low-highText =  document.getElementById("low-highText")
-  low-highText.innerHTML = low-highDropdown.value;
+  lowhighDropdown = document.getElementById("lowhigh");
+  lowhighText =  document.getElementById("lowhighText")
+  lowhighText.innerHTML = lowhighDropdown.value;
 
 }
 
@@ -63,10 +63,10 @@ function submitRankings(){
 	rateDropdown = document.getElementById("rate")
 	rate = rateDropdown.value;
 
-	low-highDropdown = document.getElementById("low-high")
-	low-high = low-highDropdown.value;
+	lowhighDropdown = document.getElementById("lowhigh")
+	lowhigh = low-highDropdown.value;
 	
-	url ="/rankings/" + rate + "/" + low-high;
+	url ="/rankings/" + rate + "/" + lowhigh;
 	console.log(url);
 	
 	location.href = url;
