@@ -48,7 +48,7 @@ def get_ranking_stats(rate, lowhigh):
 @app.route('/rankings/<rate>/<lowhigh>')
 def displayRanking(rate, lowhigh):
     stats = get_ranking_stats(rate, lowhigh)
-    return render_template("rankings2.html", stats=stats)
+    return render_template("rankings2.html", stats=stats, rate=rate)
 #------------------------------------------------------------------------
 
 
