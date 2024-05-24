@@ -70,7 +70,7 @@ def get_major_stats(major):
 @app.route('/popularMajor/<major>')
 def displayMajors(major):
     stats = get_major_stats(major)
-    return render_template("popularMajor2.html", stats=stats)
+    return render_template("popularMajor2.html", stats=stats, major=major)
 
 if __name__ == '__main__':
     my_port = 5223
