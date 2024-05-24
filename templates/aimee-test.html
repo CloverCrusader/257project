@@ -22,6 +22,45 @@ body {font-family: Tahoma;}
   font-size: 30px;
   color: white;
 }
+  .container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.position {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .position {
+  opacity: 1;
+}
+
+.text {
+  background-color: #fff;
+  color: black;
+  font-size: 16px;
+  padding: 16px 32px;
+}
 </style>
 </head>
 <body>
@@ -42,8 +81,8 @@ CollegeFind
 <div id="Home" class="tabcontent">
   <div class="container">
   <img src="/static/images/home-pic.jpg" alt="Home Picture" style="width:100%;">
-    <div class="centeredTitle">Home</div>
-    <div class="centered">Based on the data proved by the U.S. News Report, we have created a website exploring the top 50 liberal arts schools. Thank you!</div>
+    <div class="position">
+      <div class="text">Home <br><br>Based on the data proved by the U.S. News Report, we have created a website exploring the top 50 liberal arts schools. Thank you!</div>
 </div>
    <!--<p style="background-image: img src="/static/images/home-pic.jpg">Based on the data proved by the U.S. News Report, we have created a website exploring the top 50 liberal arts schools. Thank you!</p>
    <img src="/static/images/home-pic.jpg" alt="Home picture" width="500" height="333">-->
