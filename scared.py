@@ -93,7 +93,7 @@ def displayRanking(rate, lowhigh):
     titleOptions = { 'acceptrate' : 'Acceptance Rate:' , 'gradrate' : 'Graduation Rate:' , 'tuition' : 'Average Tuition:' }
     head = ""
     tail = ""
-    if rate = 'tuition':
+    if rate == 'tuition':
       head = head + "$"
     else:
       tail = tail + "%"
