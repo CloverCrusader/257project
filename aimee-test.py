@@ -60,19 +60,17 @@ def get_college_stats(income):#colleges
         user="rapaczs",
         password="chip979bond")
     cur = conn.cursor()
-    #query = f"SELECT %s FROM financialaid WHERE school = %s" 
-    #cur.execute(query, (income, colleges))
-    query = f"SELECT school FROM financialaid WHERE %s = 62497" 
-    cur.execute(query, (income,))
+    query = f"SELECT %s FROM financialaid WHERE school = %s" 
+    cur.execute(query, (income, colleges))
     results = cur.fetchall()
     aid = results[0]
     conn.close()
     return aid
 
-@app.route('/financialAid/<income>')#/<colleges>
-def comparing_stats(income): #colleges
-    aid = get_college_stats(income) #colleges
-    return render_template("financialAid.html", aid=aid, income=income)
+@app.route('/financialAid/<income>/<colleges>')
+def comparing_stats(income, colleges): #colleges
+    aid = get_college_stats(income, colleges) #colleges
+    return render_template("financialAid.html", aid=aid, income=income, colleges=colleges)
 
 
 def get_major_stats(major):
