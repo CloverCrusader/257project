@@ -12,14 +12,14 @@
 
 <h2><center>Rankings</center></h2>
 
-<p><center>Sorted by {{rate}}</center></p>
+<p><center>Sorted by {{title}}</center></p>
 
 <div class="container">
  {% for school, state, rate in stats %}
   <div class="box">
   <img src="/static/images/{{ school | replace(' ', '_') }}.jpg" alt="{{ school }} Image" class="school-image">
     <div class="school-info">
- <strong>{{loop.index}}. {{school}}, {{state}} <br><br>{{rate}}</strong></div></div>
+ <strong>{{loop.index}}. {{school}}, {{state}} <br><br>{{title}} {{rate}}</strong></div></div>
  {% endfor %}
 
 </div>
