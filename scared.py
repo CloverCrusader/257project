@@ -91,8 +91,14 @@ def get_ranking_stats(rate, lowhigh):
 @app.route('/rankings/<rate>/<lowhigh>')
 def displayRanking(rate, lowhigh):
     titleOptions = { 'acceptrate' : 'Acceptance Rate:' , 'gradrate' : 'Graduation Rate:' , 'tuition' : 'Average Tuition:' }
+    head = ""
+    tail = ""
+    if rate = 'tuition':
+      head = head + "$"
+    else:
+      tail = tail + "%"
     stats = get_ranking_stats(rate, lowhigh)
-    return render_template("rankings2.html", stats=stats, rate=rate, title=titleOptions[rate])
+    return render_template("rankings2.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
 #------------------------------------------------------------------------
 
 
