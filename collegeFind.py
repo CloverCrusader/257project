@@ -3,21 +3,13 @@ import psycopg2
 
 app = flask.Flask(__name__)
 
-minTuition = 'ORDER BY tuition'
-maxTuition = 'ORDER BY tuition DESC'
-minAcceptance = 'ORDER BY acceptrate'
-maxAcceptance = 'ORDER BY acceptrate DESC'
-minGradrate = 'ORDER BY gradrate'
-maxGradrate = 'ORDER BY gradrate DESC'
-
-rankOptions = [maxTuition, minTuition, maxAcceptance, minAcceptance, maxGradrate, minGradrate]
 
 @app.route('/rankings')
 def rankings():
 
     return flask.render_template("ranking-test.html")
 
-@app.route('/rankings/<index>')
+@app.route('/rankings/<rate>/<ascdesc>')
 def rankQuery():
 
     conn = psycopg2.connect(
@@ -33,29 +25,26 @@ def rankQuery():
             
     cur = conn.cursor()
 
-    rankOrder = rankOptions[int(index)]
+    rateOptions = { 'acceptrate' : 'ORDER BY acceptrate' , 'gradrate' : 'ORDER BY gradrate' , 'tuition' : 'ORDER BY tuition' }
+    titleOptions = { 'accceptrate' : 'Acceptance Rate:' , 'gradrate' : 'Graduation Rate:' , 'tuition' : 'Average Tuition:' }
+    rankOptions = {'desc' : 'DESC' , 'asc' : 'ASC' }
 
-    sql = "SELECT * FROM schoolstats WHERE code = %s;"
+    order = rateOptions[rate] + rankOptions[ascdesc]
 
-    query = (rankOrder, )
-    cur.execute( sql, query)
+    sql = f'SELECT state, school, {rate} FROM schoolstats {order};'
+
+    cur.execute( sql )
 
     results = cur.fetchall()
     html = ""
+    title = titleOptions[rate]
 
     for i in 10:
         if results[i] is not None:
-            school = results[i]
-            state = school[0]
-            name = school[1]
-            tuition = school[2]
-            acceptance = school[3]
-            graduation = school[4]
-            major = school[5]
-            # I do not know how to make the following fit in 120 columns without breaking it.
-            html = html + f'<p> School: {name}, Location: {state}, Average Tuition: {tuition}, Acceptance Rate: {acceptance}, Graduation Rate: {graduation}, Largest Major: {major} </p>\n'
+            rankValue = results[i][2]
+            html = html + f'<p> School: {name}, Location: {state}, {title} {rankvalue} </p>\n'
 
-    return flask.render_template("", rankedSchools = html)
+    return flask.render_template("rankings.html", rankedSchools = html)
     
 @app.route('/compare')
 def compare():
