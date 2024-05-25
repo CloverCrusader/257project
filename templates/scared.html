@@ -44,7 +44,7 @@ CollegeFind
            <option value="gradrate">Graduation Rate</option>
            <option value="tuition">Tuition Cost</option>
         </select>
-        <p class="invisible">You selected this rate from the Drop Down: <b id="rateText"> ____ </b></p>     
+        <p class="invisible"> <b id="rateText"> ____ </b></p>     
   
      <p>Sort by:</p>
         <select name="lowhigh" id="lowhigh" onchange="updateRankings()">
@@ -52,7 +52,7 @@ CollegeFind
            <option value="asc">Lowest to Highest</option>
            <option value="desc">Highest to Lowest</option>
         </select>
-     <p class="invisible">You selected this lowhigh from the Drop Down: <b id="lowhighText"> ____ </b></p>
+     <p class="invisible"> <b id="lowhighText"> ____ </b></p>
 <b><button onclick="submitRankings()">Submit</button></b> 
   </div>
   
@@ -84,13 +84,13 @@ CollegeFind
            <option value="f75to110grand">75k to 110k</option>
            <option value="f110grandup">more than 110k</option>
         </select>
-             <p class="invisible">You selected this income from the Drop Down: <b id="incomeText"> ____ </b></p>
+             <p class="invisible"> <b id="incomeText"> ____ </b></p>
      
      <p>The college I am interested in is:</p>
         <select id="colleges" onchange="updateFinancialAid()">
              {{DropdownOptions|safe}}
         </select>
-        <p class="invisible">You selected this income from the Drop Down: <b id="collegeText"> ____ </b></p>
+        <p class="invisible"> <b id="collegeText"> ____ </b></p>
   <b><button onclick="submitFinancialAid()">Submit</button></b>    <br>
      </div>
      
@@ -113,7 +113,7 @@ CollegeFind
            <option value="Political Science">Political Science</option>
            <option value="Psychology">Psychology</option>
         </select>
-     <p class="invisible">You selected this major from the Drop Down: <b id="majorText"> ____ </b></p>
+     <p class="invisible"> <b id="majorText"> ____ </b></p>
      <b><button onclick="submitMajor()">Submit</button></b>
      <br>
      </div>
