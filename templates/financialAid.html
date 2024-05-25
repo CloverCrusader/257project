@@ -7,7 +7,7 @@
 <h2 class="title-class" id="title"> Your Estimated Financial Aid </h2>
 <p>Down below are some basic school stats</p>
 {% if aid %}
- <p>The financial aid amount is {{ aid }}</p>
+ <p>The financial aid amount is {{ aid }} {{colleges}} {{income}}</p>
  {% else %}
  <p>No financial aid imformation is available for this college or income range</p>
  {% endif %}
