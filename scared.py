@@ -95,7 +95,7 @@ def displayRanking(rate, lowhigh):
 #------------------------------------------------------------------------
 
 
-def get_colleges_stats(income):#colleges
+def get_colleges_stats(income, colleges):#colleges
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
