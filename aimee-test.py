@@ -52,7 +52,7 @@ def displayRanking(rate, lowhigh):
 #------------------------------------------------------------------------
 
 
-def get_college_stats(income, colleges):
+def get_college_stats(income):#colleges
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -70,9 +70,9 @@ def get_college_stats(income, colleges):
     return aid
 
 @app.route('/financialAid/<income>/<colleges>')
-def comparing_stats(income, colleges):
-    aid = get_college_stats(income, colleges)
-    return render_template("financialAid.html", aid=aid, income=income, colleges=colleges)
+def comparing_stats(income): #colleges
+    aid = get_college_stats(income) #colleges
+    return render_template("financialAid.html", aid=aid, income=income)
 
 
 def get_major_stats(major):
