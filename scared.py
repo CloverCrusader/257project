@@ -27,9 +27,9 @@ def get_name_options():
   return html
 
 @app.route('/')
-def compare_pg():
-  html_string = get_name_options()
-  return render_template("scared.html", DropdownOptions = html_string)
+def home():
+  
+  return render_template("finalhome.html")
 
 def get_college_stats(college1, college2):
     conn = psycopg2.connect(
