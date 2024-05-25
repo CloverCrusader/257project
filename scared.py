@@ -98,7 +98,7 @@ def displayRanking(rate, lowhigh):
     else:
       tail = tail + "%"
     stats = get_ranking_stats(rate, lowhigh)
-    return render_template("rankings3.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
+    return render_template("rankings2.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
 #------------------------------------------------------------------------
 
 
