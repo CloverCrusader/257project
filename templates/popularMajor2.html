@@ -3,35 +3,22 @@
 
   <script src="/static/aimee-test.js"></script>
 </head>
-<head>
-<style>
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px; 
-  margin: 20px;
-}
 
-.box {
-  background-color: #CBC3E3;
-  border: 15px #CBC3E3;
-  padding: 50px;
-  flex: 1 1 calc(33.333% - 40px); /* three boxes per row with gap accounted for */
-  box-sizing: border-box;
-}
-</style>
-</head>
 <body>
 
 <h2>Explore Popular Majors</h2>
 
 <p>{{major}} is the most popular major at these colleges: </p>
 
-<div class="container">
+ <div class="container">
  {% for school, state in stats %}
- <div class="box">{{school}}, {{state}}</div>
+  <div class="box">
+  <img src="/static/images/{{ school | replace(' ', '_') }}.jpg" alt="{{ school }} Image" class="school-image">
+    <div class="school-info">
+ <strong> {{school}}, {{state}}</strong></div></div>
  {% endfor %}
 </div>
+ 
 <br>
  <button>New Search</button>
 </body>
