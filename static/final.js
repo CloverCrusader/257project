@@ -1,19 +1,3 @@
-/**Run when someone clicks on a tab item (include comments for clarity)*/
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-/** where this fucntion is called (this is the function for when you click on _____) */
-
 function updateCollege() {
   
   dropdown1 = document.getElementById("college1");
@@ -57,11 +41,14 @@ function submitRankings(){
 
 	lowhighDropdown = document.getElementById("lowhigh")
 	lowhigh = lowhighDropdown.value;
-	
-	url ="/rankings/" + rate + "/" + lowhigh;
-	console.log(url);
-	
-	location.href = url;
+
+	if ((rate !== "null") && (lowhigh !== "null")) {
+		url ="/rankings/" + rate + "/" + lowhigh;
+		console.log(url);
+		location.href = url;
+    	} else {
+        	alert("Please select two both options.");
+    	}
 }
 function updateFinancialAid() {
   
@@ -81,11 +68,14 @@ function submitFinancialAid(){
 
 	collegeDropdown = document.getElementById("colleges")
 	colleges = collegeDropdown.value;
-	
-	url ="/financialaid/" + income + "/" + colleges;
-	console.log(url);
-	
-	location.href = url;
+
+	if (income !== "null") {
+		url ="/financialaid/" + income + "/" + colleges;
+		console.log(url);
+		location.href = url;
+	} else {
+        	alert("Please select an income range.");
+    	}
 }
 
 function updateMajor() {

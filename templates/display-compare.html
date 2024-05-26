@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/final.css">
+    
+    <script src="/static/final.js"></script>
+    
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {font-family: Tahoma;}
+
+</style>
+  
+<body>
+  
+<h2><center>CollegeFind</center></h2>
+  
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="/rankings">Ranking</a>
+  <a class="active" href="/Compare">Compare</a>
+  <a href="/financialaid">Estimate Your Financial Aid</a>
+  <a href="/popularmajor">Popular Major</a>
+</div>
+
+<h2 class="title-class" id="title">
+College Comparison
+</h2>
+<p>Down below are some basic school stats</p>
+  {% if stats %}
+      <table>
+          <thead>
+               <tr>
+                  <th>College Name</th>
+                  <th>State of School</th>
+                  <th>Acceptance Rate</th>
+                  <th>Graduation Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in stats %}
+                    <tr>
+                        <td>{{ stat[1] }}</td> 
+                        <td>{{ stat[0] }}</td> 
+                        <td>{{ stat[3] }}</td> 
+                        <td>{{ stat[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available for the selected colleges.</p>
+
+    {% endif %}
+</body>
+ <style type="text/css">      
+      html, body, #container { 
+        width: 45%; height: 45%; margin: 0; padding: 0; 
+      } 
+    </style>
+  </head>
+  <body>
+  
+<center><button onclick="newSearch('/compare')">New Search</button></center>
+</body>
+</html>
