@@ -3,10 +3,16 @@ import psycopg2
 
 app = flask.Flask(__name__)
 
+
+# Home functionality
+
 @app.route('/')
 def home():
 
     return flask.render_template("finalhome.html")
+
+
+# Ranking functionality
 
 def get_ranking_stats(rate, lowhigh):
 
@@ -48,15 +54,24 @@ def displayRanking(rate, lowhigh):
 def rankings():
 
     return flask.render_template("finalrankings.html")
+
+
+# Compare functionality
     
 @app.route('/compare')
 def compare():
 
   return flask.render_template("finalcompare.html")
 
+
+# Financial Aid functionality
+
 @app.route('/financialaid')
 def financialAid():
     return flask.render_template("finalfinancial-aid.html")
+
+
+# Popular Major functionality
 
 def get_major_stats(major):
     conn = psycopg2.connect(
@@ -75,7 +90,7 @@ def get_major_stats(major):
 @app.route('/popularmajor/<major>')
 def displayMajors(major):
     stats = get_major_stats(major)
-    return render_template("display-major.html", stats=stats, major=major) # rename 
+    return flask.render_template("display-major.html", stats=stats, major=major) # rename 
 
 @app.route('/popularmajor')
 def popMajor():
