@@ -66,6 +66,27 @@ def compare():
 
 # Financial Aid functionality
 
+def get_colleges_stats(income, colleges):#colleges
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    query = f"SELECT {income} FROM financialaid WHERE school = \'{colleges}\'" 
+    cur.execute(query)
+    results = cur.fetchone()
+    aid = results[0]
+    conn.close()
+    return aid
+
+@app.route('/financialid/<income>/<colleges>')
+def comparing_aidStats(income, colleges): #colleges
+    aid = get_colleges_stats(income, colleges) #colleges
+    print(aid) # debug
+    return flask.render_template("display-aid.html", aid=aid, colleges=colleges)
+
 @app.route('/financialaid')
 def financialAid():
     return flask.render_template("finalfinancial-aid.html")
