@@ -4,16 +4,17 @@ import psycopg2
 app = flask.Flask(__name__)
 
 def get_name_options():
-
   conn = psycopg2.connect(
         host="localhost",
         port=5432,
         database="rapaczs",
         user="rapaczs",
         password="chip979bond")
+
   cur = conn.cursor()
 
   query = "SELECT school FROM schoolstats ORDER BY school ASC";
+
   cur.execute(query)
   rows = cur.fetchall()
 
@@ -30,14 +31,12 @@ def get_name_options():
 
 @app.route('/')
 def home():
-
     return flask.render_template("finalhome.html")
 
 
 # Ranking functionality
 
 def get_ranking_stats(rate, lowhigh):
-
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -58,7 +57,6 @@ def get_ranking_stats(rate, lowhigh):
 
 @app.route('/rankings/<rate>/<lowhigh>')
 def displayRanking(rate, lowhigh):
-
     titleOptions = {'acceptrate' : 'Acceptance Rate:', 'gradrate' : 'Graduation Rate:', 'tuition' : 'Average Tuition:'}
 
     head = ""
@@ -74,16 +72,62 @@ def displayRanking(rate, lowhigh):
 
 @app.route('/rankings')
 def rankings():
-
     return flask.render_template("finalrankings.html")
 
 
 # Compare functionality
+
+def get_college_stats(college1, college2):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+
+    cur = conn.cursor()
+    
+    query = "SELECT * FROM schoolstats WHERE school IN (%s, %s)"
+
+    cur.execute(query, (college1, college2))
+    results = cur.fetchall()
+
+    conn.close()
+
+    return results
+
+def get_college_aid(college1, college2):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+
+    cur = conn.cursor()
+    
+    query = "SELECT * FROM financialaid WHERE school IN (%s, %s)"
+
+    cur.execute(query, (college1, college2))
+    results = cur.fetchall()
+
+    conn.close()
+
+    return results
+
+
+@app.route('/compare/<college1>/<college2>')
+def comparing_stats(college1, college2):
+    stats = get_college_stats(college1, college2)
+    aid = get_college_aid(college1, college2)
+
+    return flask.render_template("display-compare.html", stats=stats, aid=aid)
     
 @app.route('/compare')
 def compare():
+    dropdownOptions = get_name_options()
 
-  return flask.render_template("finalcompare.html")
+    return flask.render_template("finalcompare.html", DropdownOptions = dropdownOptions)
 
 
 # Financial Aid functionality
@@ -95,24 +139,27 @@ def get_colleges_stats(income, colleges):#colleges
         database="rapaczs",
         user="rapaczs",
         password="chip979bond")
+
     cur = conn.cursor()
+
     query = f"SELECT {income} FROM financialaid WHERE school = \'{colleges}\'" 
+
     cur.execute(query)
     results = cur.fetchone()
     aid = results[0]
+
     conn.close()
+
     return aid
 
 @app.route('/financialaid/<income>/<colleges>')
 def comparing_aidStats(income, colleges):
-
     aid = get_colleges_stats(income, colleges) #colleges
-    print(aid) # debug
+    
     return flask.render_template("display-aid.html", aid=aid, colleges=colleges)
 
 @app.route('/financialaid')
 def financialAid():
-
     dropdownOptions = get_name_options()
 
     return flask.render_template("finalfinancial-aid.html",  DropdownOptions = dropdownOptions)
@@ -127,21 +174,26 @@ def get_major_stats(major):
         database="rapaczs",
         user="rapaczs",
         password="chip979bond")
+
     cur = conn.cursor()
+
     query = f"SELECT school, state FROM schoolstats WHERE popmajor = %s"
+
     cur.execute(query, (major,))
     results = cur.fetchall()
+
     conn.close()
+
     return results
 
 @app.route('/popularmajor/<major>')
 def displayMajors(major):
     stats = get_major_stats(major)
+
     return flask.render_template("display-major.html", stats=stats, major=major) # rename 
 
 @app.route('/popularmajor')
 def popMajor():
-
     return flask.render_template("finalpopular-major.html")
 
 if __name__ == '__main__':
