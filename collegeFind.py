@@ -55,7 +55,7 @@ def compare():
 def financialAid():
     return flask.render_template("finalfinancial-aid.html")
 
-@app.route('/popmajor')
+@app.route('/popularmajor')
 def popMajor():
 
     return flask.render_template("finalpopular-major.html")
