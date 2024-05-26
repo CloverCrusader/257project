@@ -19,7 +19,7 @@
   <div class="box">
   <img src="/static/images/{{ school | replace(' ', '_') }}.jpg" alt="{{ school }} Image" class="school-image">
     <div class="school-info">
- <strong>{{loop.index}}. {{school}}, {{state}} <br><br>{{title}} {{head}}{{rate}}{{tail}}</strong></div></div>
+ {{loop.index}}. {{school}}, {{state}} <br><br><strong>{{title}} {{head}}{{rate}}{{tail}}</strong></div></div>
  {% endfor %}
 
 </div>
