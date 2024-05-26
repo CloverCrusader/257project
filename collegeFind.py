@@ -49,18 +49,21 @@ def rankQuery():
 @app.route('/compare')
 def compare():
 
-  html_string = get_name_options()
-  return flask.render_template("compare.html", DropdownOptions = html_string)
+  return flask.render_template("finalcompare.html")
 
-@app.route('/comparingStats') # update naming conventions throughout files to be in line with convention
-def comparingStats():
+@app.route('/financialaid')
+def financialAid():
+    return flask.render_template("finalfinancial-aid.html")
 
-  return flask.render_template("comparingStats.html")
+@app.route('/popmajor')
+def popMajor():
+
+    return flask.render_template("finalpop-major.html")
 
 @app.route('/')
 def home():
 
-    return flask.render_template("home.html")
+    return flask.render_template("finalhome.html")
 
 if __name__ == '__main__':
     my_port = 5123
