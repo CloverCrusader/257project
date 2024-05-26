@@ -1,0 +1,28 @@
+ <head>
+  <link rel="stylesheet" href="/static/final.css">
+
+  <script src="/static/final.js"></script>
+</head>
+
+<body>
+
+ <h2><center>CollegeFind</center></h2>
+  
+<div class="topnav">
+  <a href="/">Home</a>
+  <a href="/rankings">Ranking</a>
+  <a href="/compare">Compare</a>
+  <a href="/financialaid">Estimate Your Financial Aid</a>
+  <a class="active" href="/popMajor">Popular Major</a>
+</div>
+  
+<h2 class="title-class" id="title"> Your Estimated Financial Aid </h2>
+<p>Down below are some basic school stats</p>
+{% if aid %}
+ <p>The expected financial aid amount is ${{ aid }} at {{colleges}}</p>
+ {% else %}
+ <p>No financial aid imformation is available for this college or income range</p>
+ {% endif %}
+<br>
+ <button onclick="newSearch('/financialaid')">New Search</button>
+</body>
