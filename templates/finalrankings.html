@@ -25,9 +25,9 @@ body {font-family: Tahoma;}
   <a href="/popularmajor">Popular Major</a>
 </div>
 
-<h3>Rankings (according to U.S. News Report)</h3>
+<h3><center>Rankings (according to U.S. News Report)</center></h3>
  
-<p>         Filter by: </p>
+<p><center>Filter by: </center></p>
    <select name="rate" id="rate" onchange="updateRanking()">
       <option value="null">--</option>
       <option value="acceptrate">Acceptance Rate</option>
@@ -36,14 +36,14 @@ body {font-family: Tahoma;}
    </select>
    <p class="invisible"> <b id="rateText"> ____ </b></p>     
 
-<p>        Sort by:</p>
+<p><center>Sort by: </center></p>
    <select name="lowhigh" id="lowhigh" onchange="updateRankings()">
       <option value="null">--</option>
       <option value="asc">Lowest to Highest</option>
       <option value="desc">Highest to Lowest</option>
    </select>
 <p class="invisible"> <b id="lowhighText"> ____ </b></p>
-<b><button onclick="submitRankings()">Submit</button></b>
+<b><center><button onclick="submitRankings()">Submit</button></center></b>
 
 </body>
 </html>
