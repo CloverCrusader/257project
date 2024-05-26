@@ -108,3 +108,6 @@ function submitMajor() {
         alert("Please select a major.");
     }
 }
+function newSearch(){
+	location.href = "/rankings";
+}
