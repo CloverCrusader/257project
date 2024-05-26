@@ -72,7 +72,7 @@ function updateFinancialAid() {
   collegeDropdown = document.getElementById("colleges");
   collegeText =  document.getElementById("collegeText")
   collegeText.innerHTML = collegeDropdown.value;
-
+	
 }
 
 function submitFinancialAid(){
@@ -82,7 +82,7 @@ function submitFinancialAid(){
 	collegeDropdown = document.getElementById("colleges")
 	colleges = collegeDropdown.value;
 	
-	url ="/financialAid/" + income + "/" + colleges;
+	url ="/financialaid/" + income + "/" + colleges;
 	console.log(url);
 	
 	location.href = url;
