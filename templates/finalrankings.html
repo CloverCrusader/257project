@@ -25,25 +25,25 @@ body {font-family: Tahoma;}
   <a href="/popularmajor">Popular Major</a>
 </div>
 
-<h3>Rankings (according to U.S. News Report)</h3>
+<h3><center>Rankings (according to U.S. News Report)</center></h3>
  
-<p> Filter by: </p>
-   <select name="rate" id="rate" onchange="updateRanking()">
+<p><center>Filter by: </center></p>
+   <center><select name="rate" id="rate" onchange="updateRanking()">
       <option value="null">--</option>
       <option value="acceptrate">Acceptance Rate</option>
       <option value="gradrate">Graduation Rate</option>
       <option value="tuition">Tuition Cost</option>
-   </select>
+   </select></center>
    <p class="invisible"> <b id="rateText"> ____ </b></p>     
 
-<p>Sort by:</p>
-   <select name="lowhigh" id="lowhigh" onchange="updateRankings()">
+<p><center>Sort by: </center></p>
+   <center><select name="lowhigh" id="lowhigh" onchange="updateRankings()">
       <option value="null">--</option>
       <option value="asc">Lowest to Highest</option>
       <option value="desc">Highest to Lowest</option>
-   </select>
+   </select></center>
 <p class="invisible"> <b id="lowhighText"> ____ </b></p>
-<b><button onclick="submitRankings()">Submit</button></b>
+<b><center><button onclick="submitRankings()">Submit</button></center></b>
 
 </body>
 </html>
