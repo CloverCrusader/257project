@@ -10,14 +10,14 @@ function updateCollege() {
 
 }
 
-function go(){
+function submitCompare(){
 	dropdown1 = document.getElementById("college1")
 	college1 = dropdown1.value;
 
 	dropdown2 = document.getElementById("college2")
 	college2 = dropdown2.value;
 	
-	url ="/comparingStats/" + college1 + "/" + college2;
+	url ="/compare/" + college1 + "/" + college2;
 	console.log(url);
 	
 	location.href = url;
