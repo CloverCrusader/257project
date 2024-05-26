@@ -16,13 +16,13 @@
   <a href="/popMajor">Popular Major</a>
 </div>
   
-<h2 class="title-class" id="title"> Your Estimated Financial Aid </h2>
-<p>Down below are some basic school stats</p>
+<center><h2 class="title-class" id="title"> Your Estimated Financial Aid </h2></center>
+<center><p>Down below are some basic school stats</p></center>
 {% if aid %}
- <p>The expected financial aid amount is ${{ aid }} at {{colleges}}</p>
+ <center><p>The expected financial aid amount is ${{ aid }} at {{colleges}}</p></center>
  {% else %}
- <p>No financial aid imformation is available for this college or income range</p>
+ <center><p>No financial aid information is available for this college or income range</p></center>
  {% endif %}
 <br>
- <button onclick="newSearch('/financialaid')">New Search</button>
+ <center><button onclick="newSearch('/financialaid')">New Search</button></center>
 </body>
