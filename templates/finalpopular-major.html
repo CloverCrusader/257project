@@ -23,5 +23,20 @@
   <a class="active" href="/popMajor">Popular Major</a>
 </div>
 
+<h2><center>Explore Popular Majors</center></h2>
+
+<p><center>{{major}} is the most popular major at these colleges: </center></p>
+
+ <div class="container">
+ {% for school, state in stats %}
+  <div class="box">
+  <img src="/static/images/{{ school | replace(' ', '_') }}.jpg" alt="{{ school }} Image" class="school-image">
+    <div class="school-info">
+ <strong> {{school}}, {{state}}</strong></div></div>
+ {% endfor %}
+</div>
+ 
+<br>
+ <button>New Search</button>
 </body>
 </html>
