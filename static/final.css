@@ -61,6 +61,7 @@ body {
       border-radius: 10px;
       margin-bottom: 15px;
       object-fit: cover;
+      display: flex;
     }
 
 /* for home page */
