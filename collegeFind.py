@@ -3,48 +3,51 @@ import psycopg2
 
 app = flask.Flask(__name__)
 
+@app.route('/')
+def home():
+
+    return flask.render_template("finalhome.html")
+
+def get_ranking_stats(rate, lowhigh):
+
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+
+    cur = conn.cursor()
+
+    query = f"SELECT school, state, {rate} FROM schoolstats ORDER BY {rate} {lowhigh}"
+
+    cur.execute(query)
+    results = cur.fetchall()
+
+    conn.close()
+
+    return results
+
+@app.route('/rankings/<rate>/<lowhigh>')
+def displayRanking(rate, lowhigh):
+
+    titleOptions = {'acceptrate' : 'Acceptance Rate:', 'gradrate' : 'Graduation Rate:', 'tuition' : 'Average Tuition:'}
+
+    head = ""
+    tail = ""
+    if rate == 'tuition':
+      head = head + "$"
+    else:
+      tail = tail + "%"
+
+    stats = get_ranking_stats(rate, lowhigh)
+
+    return render_template("display-rankings.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
 
 @app.route('/rankings')
 def rankings():
 
     return flask.render_template("finalrankings.html")
-
-@app.route('/rankings/<rate>/<ascdesc>')
-def rankQuery():
-
-    conn = psycopg2.connect(
-                host="localhost",
-                port=5432,   
-                database="rapaczs",
-                user="rapaczs",
-                password="chip979bond")
-        
-    if conn is None:
-        conn.close()
-        return None
-            
-    cur = conn.cursor()
-
-    rateOptions = { 'acceptrate' : 'ORDER BY acceptrate' , 'gradrate' : 'ORDER BY gradrate' , 'tuition' : 'ORDER BY tuition' }
-    titleOptions = { 'accceptrate' : 'Acceptance Rate:' , 'gradrate' : 'Graduation Rate:' , 'tuition' : 'Average Tuition:' }
-    rankOptions = {'desc' : 'DESC' , 'asc' : 'ASC' }
-
-    order = rateOptions[rate] + rankOptions[ascdesc]
-
-    sql = f'SELECT state, school, {rate} FROM schoolstats {order};'
-
-    cur.execute( sql )
-
-    results = cur.fetchall()
-    html = ""
-    title = titleOptions[rate]
-
-    for i in 10:
-        if results[i] is not None:
-            rankValue = results[i][2]
-            html = html + f'<p> School: {name}, Location: {state}, {title} {rankvalue} </p>\n'
-
-    return flask.render_template("rankings.html", rankedSchools = html)
     
 @app.route('/compare')
 def compare():
@@ -59,11 +62,6 @@ def financialAid():
 def popMajor():
 
     return flask.render_template("finalpopular-major.html")
-
-@app.route('/')
-def home():
-
-    return flask.render_template("finalhome.html")
 
 if __name__ == '__main__':
     my_port = 5123
