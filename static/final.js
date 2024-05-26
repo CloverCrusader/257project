@@ -81,11 +81,14 @@ function submitFinancialAid(){
 
 	collegeDropdown = document.getElementById("colleges")
 	colleges = collegeDropdown.value;
-	
-	url ="/financialaid/" + income + "/" + colleges;
-	console.log(url);
-	
-	location.href = url;
+
+	if (major !== "null") {
+		url ="/financialaid/" + income + "/" + colleges;
+		console.log(url);
+		location.href = url;
+	} else {
+        	alert("Please select an income range.");
+    	}
 }
 
 function updateMajor() {
