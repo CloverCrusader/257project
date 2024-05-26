@@ -3,6 +3,28 @@ import psycopg2
 
 app = flask.Flask(__name__)
 
+def get_name_options():
+
+  conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+  cur = conn.cursor()
+
+  query = "SELECT school FROM schoolstats ORDER BY school ASC";
+  cur.execute(query)
+  rows = cur.fetchall()
+
+  html= ""
+  for row in rows:
+    school = row[0]
+
+    html = html + f'<option value="{school}">{school}</option>'
+    html = html + '\n'
+  return html
+
 
 # Home functionality
 
@@ -82,14 +104,18 @@ def get_colleges_stats(income, colleges):#colleges
     return aid
 
 @app.route('/financialid/<income>/<colleges>')
-def comparing_aidStats(income, colleges): #colleges
+def comparing_aidStats(income, colleges):
+    
     aid = get_colleges_stats(income, colleges) #colleges
     print(aid) # debug
     return flask.render_template("display-aid.html", aid=aid, colleges=colleges)
 
 @app.route('/financialaid')
 def financialAid():
-    return flask.render_template("finalfinancial-aid.html")
+
+    dropdownOptions = get_name_options()
+
+    return flask.render_template("finalfinancial-aid.html",  DropdownOptions = dropdownOptions)
 
 
 # Popular Major functionality
