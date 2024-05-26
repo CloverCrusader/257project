@@ -103,9 +103,9 @@ def get_colleges_stats(income, colleges):#colleges
     conn.close()
     return aid
 
-@app.route('/financialid/<income>/<colleges>')
+@app.route('/financialaid/<income>/<colleges>')
 def comparing_aidStats(income, colleges):
-    
+
     aid = get_colleges_stats(income, colleges) #colleges
     print(aid) # debug
     return flask.render_template("display-aid.html", aid=aid, colleges=colleges)
