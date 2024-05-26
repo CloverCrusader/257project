@@ -25,7 +25,43 @@ body {font-family: Tahoma;}
   <a href="/popularmajor">Popular Major</a>
 </div>
 
-/** PLEASE PUT YOUR REAL COMPARISON HTML HERE */
+<h2 class="title-class" id="title">
+College Comparison
+</h2>
+<p>Down below are some basic school stats</p>
+  {% if stats %}
+      <table>
+          <thead>
+               <tr>
+                  <th>College Name</th>
+                  <th>State of School</th>
+                  <th>Acceptance Rate</th>
+                  <th>Graduation Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in stats %}
+                    <tr>
+                        <td>{{ stat[1] }}</td> 
+                        <td>{{ stat[0] }}</td> 
+                        <td>{{ stat[3] }}</td> 
+                        <td>{{ stat[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available for the selected colleges.</p>
+
+    {% endif %}
+</body>
+ <style type="text/css">      
+      html, body, #container { 
+        width: 45%; height: 45%; margin: 0; padding: 0; 
+      } 
+    </style>
+  </head>
+  <body>
   
 <center><button onclick="newSearch('/compare')">New Search</button></center>
 </body>
