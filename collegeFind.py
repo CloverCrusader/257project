@@ -42,7 +42,7 @@ def displayRanking(rate, lowhigh):
 
     stats = get_ranking_stats(rate, lowhigh)
 
-    return render_template("display-rankings.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
+    return flask.render_template("display-rankings.html", stats=stats, rate=rate, title=titleOptions[rate], head=head, tail=tail)
 
 @app.route('/rankings')
 def rankings():
