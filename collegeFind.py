@@ -7,7 +7,7 @@ app = flask.Flask(__name__)
 @app.route('/rankings')
 def rankings():
 
-    return flask.render_template("ranking-test.html")
+    return flask.render_template("finalrankings.html")
 
 @app.route('/rankings/<rate>/<ascdesc>')
 def rankQuery():
@@ -58,7 +58,7 @@ def financialAid():
 @app.route('/popmajor')
 def popMajor():
 
-    return flask.render_template("finalpop-major.html")
+    return flask.render_template("finalpopular-major.html")
 
 @app.route('/')
 def home():
