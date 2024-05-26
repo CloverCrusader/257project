@@ -101,7 +101,7 @@ function submitMajor() {
 	major = majorDropdown.value;
     
     if (major !== "null") {
-	url = "/popularMajor/" + major;
+	url = "/popularmajor/" + major;
         console.log(url);
         location.href = url;
     } else {

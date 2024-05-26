@@ -58,6 +58,25 @@ def compare():
 def financialAid():
     return flask.render_template("finalfinancial-aid.html")
 
+def get_major_stats(major):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="rapaczs",
+        user="rapaczs",
+        password="chip979bond")
+    cur = conn.cursor()
+    query = f"SELECT school, state FROM schoolstats WHERE popmajor = %s"
+    cur.execute(query, (major,))
+    results = cur.fetchall()
+    conn.close()
+    return results
+
+@app.route('/popularmajor/<major>')
+def displayMajors(major):
+    stats = get_major_stats(major)
+    return render_template("display-major.html", stats=stats, major=major) # rename 
+
 @app.route('/popularmajor')
 def popMajor():
 
