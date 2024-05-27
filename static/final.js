@@ -102,18 +102,25 @@ function submitMajor() {
 	}
 }
 
+function fetchjson(college1, college2){
+	URL = "/graphdata/" + college1;
 
-function updatejson(data){
-	-- PUT YOUR GRAPH PARSING HERE
-}
+    	fetch(URL).then( response => response.json());
 
+	// assign above to first dictionary
 
-function fetchjson(college){
-	URL = "/graphdata/" + college;
+	URL = "/graphdata/" + college2;
 
-    	fetch(URL).then( response => response.json()).then( data => updatejson(data));
+    	fetch(URL).then( response => response.json());
 
-    	console.log(URL);
+	// assign above to second dictionary
+
+	var graphdata = [[],
+			 [],
+			 [],
+			 [],
+			 []];
+
 }
 
 function newSearch(url){
