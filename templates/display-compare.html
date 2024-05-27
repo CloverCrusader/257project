@@ -28,7 +28,7 @@ body {font-family: Tahoma;}
 
 <h2>College Comparison</h2>
 <p>Down below are some basic school stats</p>
-  {% if stats %}
+  <center>{% if stats %}
       <table>
           <thead>
                <tr>
@@ -50,6 +50,7 @@ body {font-family: Tahoma;}
             </tbody>
         </table>
     {% else %}
+      </center>
         <p>No data available for the selected colleges.</p>
 
     {% endif %}
