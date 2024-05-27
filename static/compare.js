@@ -54,3 +54,5 @@ function go(){
 	
 	location.href = url;
 }
+function back(){
+	location.href = "/"
