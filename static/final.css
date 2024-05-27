@@ -132,6 +132,12 @@ body {
   color: black;
 }
 
+table {
+  font-size: 20px;
+  font-family: Tahoma;
+  text-align: center;
+        }
+
 @import compass
 
 $font-stack-safe: Tahoma
