@@ -126,4 +126,15 @@ body {
     font-family: Tahoma;
     background-color: #CBC3E3;
     border-radius: 10px;
+    border: none;
   }
+
+.submit-button a:hover {
+  background-color: #957DAD;
+  color: black;
+}
+
+.submit-button a.active {
+  background-color: #F8F8F8;
+  color: black;
+}
