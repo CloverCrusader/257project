@@ -1,51 +1,50 @@
-
-  <head>
-  <link rel="stylesheet" href="/static/tab-test.css">
-
-  <script src="/static/compare.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Comparison</title>
+    <link rel="stylesheet" href="/static/tab-test.css">
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
 </head>
 <body>
-<h2 class="title-class" id="title">
-College Comparison
-</h2>
-<p>Down below are some basic school stats {{stat[5]}}</p>
-  {% if stats %}
-      <table>
-          <thead>
-               <tr>
-                  <th>College Name</th>
-                  <th>State of School</th>
-                  <th>Acceptance Rate</th>
-                  <th>Graduation Rate</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for stat in stats %}
-                    <tr>
-                        <td>{{ stat[1] }}</td> 
-                        <td>{{ stat[0] }}</td> 
-                        <td>{{ stat[3] }}</td> 
-                        <td>{{ stat[4] }}</td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No data available for the selected colleges.</p>
+    <h2 class="title-class" id="title">College Comparison</h2>
+    <p>Down below are some basic school stats:</p>
 
+    {% if stats %}
+    <table>
+        <thead>
+            <tr>
+                <th>College Name</th>
+                <th>State of School</th>
+                <th>Acceptance Rate</th>
+                <th>Graduation Rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in stats %}
+            <tr>
+                <td>{{ stat[1] }}</td>
+                <td>{{ stat[0] }}</td>
+                <td>{{ stat[3] }}</td>
+                <td>{{ stat[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No data available for the selected colleges.</p>
     {% endif %}
-</body>
- <style type="text/css">      
-      html, body, #container { 
-        width: 45%; height: 45%; margin: 0; padding: 0; 
-      } 
-    </style>
-  </head>
-<button class="submit-button" onclick = "back()"> Go back</button>
-  <body>
+
+    <div id="container" style="width: 100%; height: 500px;"></div>
+    <button class="submit-button" onclick="back()">Go back</button>
+
     <script>
-      src = "https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"
-   document.addEventListener("DOMContentLoaded", function() {
+        function back() {
+            location.href = "/";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
             fetch(`/data/{{ stats[0][1] }}/{{ stats[1][1] }}`)
                 .then(response => response.json())
                 .then(data => {
@@ -60,4 +59,5 @@ College Comparison
                 });
         });
     </script>
-  </body>
+</body>
+</html>
