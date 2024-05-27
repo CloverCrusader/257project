@@ -90,7 +90,7 @@ body {
   -ms-transform: translate(-50%, -50%);
   text-align: center;
 }
-
+/**
 .containerHome:hover .image {
   opacity: 0.3;
 }
@@ -98,6 +98,7 @@ body {
 .containerHome:hover .position {
   opacity: 1;
 }
+*/
 
 .text {
   background-color: #fff;
