@@ -197,7 +197,7 @@ def popMajor():
     return flask.render_template("finalpopular-major.html")
 
 @app.route('/map')
-def rankings():
+def map():
     return flask.render_template("test-map.html")
 
 if __name__ == '__main__':
