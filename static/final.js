@@ -16,11 +16,16 @@ function submitCompare(){
 
 	dropdown2 = document.getElementById("college2")
 	college2 = dropdown2.value;
+
+	if (college1 !==college2) {
+		url ="/compare/" + college1 + "/" + college2;
+		console.log(url);
+		location.href = url;
+    	} else {
+        	alert("Please select two different colleges.");
+    	}
 	
-	url ="/compare/" + college1 + "/" + college2;
-	console.log(url);
 	
-	location.href = url;
 }
 
 function updateRankings() {
