@@ -23,10 +23,10 @@
   <a class="active" href="/popMajor">Popular Major</a>
 </div>
 
-<center><h3>Most Popular Major at Every College</h3></center>
-   <center><p>Which colleges' most popular major fits with your desired major?</p></center>
-     <center><p> The major I am interested in is: </p></center>
-        <center><select id="major" onchange="updateMajor()">
+<h3>Most Popular Major at Every College</h3>
+   <p>Which colleges' most popular major fits with your desired major?</p>
+     <p> The major I am interested in is: </p>
+        <select id="major" onchange="updateMajor()">
            <option value="null">--</option>
            <option value="Biology">Biology</option>           
            <option value="Business">Business</option>
@@ -40,9 +40,9 @@
            <option value="Music">Music</option>
            <option value="Political Science">Political Science</option>
            <option value="Psychology">Psychology</option>
-        </select></center>
-     <center><p class="invisible"> <b id="majorText"> ____ </b></p></center>
-     <center><b><button onclick="submitMajor()">Submit</button></b></center>
+        </select>
+     <p class="invisible"> <b id="majorText"> ____ </b></p>
+     <b><button class="submit-button" onclick="submitMajor()">Submit</button></b>
      <br>
 </body>
 </html>
