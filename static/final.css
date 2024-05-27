@@ -82,7 +82,7 @@ body {
 
 .position {
   transition: .5s ease;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 35%;
   left: 50%;
@@ -91,13 +91,6 @@ body {
   text-align: center;
 }
 
-.containerHome:hover .image {
-  opacity: 0.3;
-}
-
-.containerHome:hover .position {
-  opacity: 1;
-}
 
 
 .text {
