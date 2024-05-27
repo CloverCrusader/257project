@@ -44,6 +44,20 @@ College Comparison
 <button class="submit-button" onclick = "back()"> Go back</button>
   <body>
     <script>
-      src = 
+      src = "https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"
+   document.addEventListener("DOMContentLoaded", function() {
+            fetch(`/data/{{ stats[0][1] }}/{{ stats[1][1] }}`)
+                .then(response => response.json())
+                .then(data => {
+                    const chartData = data.map(item => [item[1], item[4]]); // Adjust index based on your data structure
+
+                    anychart.onDocumentReady(function() {
+                        var chart = anychart.bar();
+                        chart.data(chartData);
+                        chart.container('container');
+                        chart.draw();
+                    });
+                });
+        });
     </script>
   </body>
