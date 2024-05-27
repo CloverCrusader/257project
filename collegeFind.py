@@ -96,7 +96,8 @@ def get_college_stats(college1, college2):
 
     return results
 
-def get_college_aid(college):
+@app.route('/graphdata/<college>')
+def get_college_aid(college1, college2):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -121,10 +122,8 @@ def get_college_aid(college):
 @app.route('/compare/<college1>/<college2>')
 def comparing_stats(college1, college2):
     stats = get_college_stats(college1, college2)
-    aidA = get_college_aid(college1)
-    aidB = get_college_aid(college2)
 
-    return flask.render_template("display-compare.html", stats=stats, aidA=aidA, aidB=aidB)
+    return flask.render_template("display-compare.html", stats=stats)
     
 @app.route('/compare')
 def compare():
