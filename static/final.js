@@ -115,11 +115,54 @@ function fetchjson(college1, college2){
 
 	// assign above to second dictionary
 
-	var graphdata = [[],
-			 [],
-			 [],
-			 [],
-			 []];
+	anychart.onDocumentReady(function () {
+	  
+	  var data = [
+	    
+	    ["0-30k", 4, 0],
+	    ["30-48k", 4, 0],
+	    ["48-75k", 6, 0],
+	    ["75-110k", 9, 1],
+	    ["110k+", 12, 2]
+	  ];
+	  
+	  // create a data set
+	  var dataSet = anychart.data.set(data);
+	
+	  var college1Data = dataSet.mapAs({x: 0, value: 1});
+	  var college2Data = dataSet.mapAs({x: 0, value: 2});
+	
+	  var chart = anychart.line();
+	
+	  var college1 = chart.line(college1Data);
+	  college1.name("College1");
+	  var college2 = chart.line(college2Data);
+	  college2.name("College2");
+	
+	  chart.legend().enabled(true);
+	  
+	  chart.title("College Finaval Aid vs Income Data");
+	  
+	  chart.yAxis().title("Money");
+	  chart.xAxis().title("Income Range");
+	  
+	  // customize the series markers
+	  college1.hovered().markers().enabled(true).type("circle").size(4);
+	  college2.hovered().markers().enabled(true).type("circle").size(4);
+	  
+	  // turn on crosshairs and remove the y hair
+	  chart.crosshair().enabled(true).yStroke(null).yLabel(false);
+	  
+	  // change the tooltip position
+	  chart.tooltip().positionMode("point");
+	  chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
+	  
+	  // specify where to display the chart
+	  chart.container("container");
+	  
+	  chart.draw();
+	  
+	});
 
 }
 
