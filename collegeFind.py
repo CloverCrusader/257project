@@ -201,5 +201,5 @@ def map():
     return flask.render_template("test-map.html")
 
 if __name__ == '__main__':
-    my_port = 5123
+    my_port = 5223
     app.run(host = '0.0.0.0', port = my_port)
