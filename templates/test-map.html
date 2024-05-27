@@ -1,49 +1,76 @@
-<html>
+<html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeFind</title>
     <link rel="stylesheet" href="/static/final.css">
-  
     <script src="/static/final.js"></script>
-  
+    <style>
+        body {
+            font-family: Tahoma;
+        }
+        .circle {
+            height: 20px;
+            width: 20px;
+            background-color: #000000;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the dot */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .circle:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        .containerHome {
+            position: relative;
+            width: 80%;
+        }
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .topnav a.active {
+            background-color: #ddd;
+            color: black;
+        }
+    </style>
 </head>
-<style>
-body {font-family: Tahoma;}
-    
-.circle {
-  height: 20px;
-  width: 20px;
-  background-color: #000000;
-  border-radius: 50%;
-}
-</style>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-  
 <body>
-  
-<h2>CollegeFind</h2>
-  
-<div class="topnav">
-  <a href="/">Home</a>
-  <a href="/rankings">Ranking</a>
-  <a href="/compare">Compare</a>
-  <a href="/financialaid">Estimate Your Financial Aid</a>
-  <a href="/popularmajor">Popular Major</a>
-  <a class="active" href="/map">Map</a>
-</div>
-
-<h3>Location of the Colleges</h3>
-
-<div class="containerHome">
-    <img src="/static/images/USmap.jpg" alt="Map of the Colleges" usemap="#collegeMap" style="width:80%;">
-    <div class="circle"></div>
-
-<map name="collegeMap">
-  <area shape="circle" coords="50,20,82,126" alt="Pomona College">
-  <area shape="circle" coords="90,58,3" alt="Carleton College">
-</map>
-    <div class="circle"></div>
-</div>
-    
-    
+    <h2>CollegeFind</h2>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="/rankings">Ranking</a>
+        <a href="/compare">Compare</a>
+        <a href="/financialaid">Estimate Your Financial Aid</a>
+        <a href="/popularmajor">Popular Major</a>
+        <a class="active" href="/map">Map</a>
+    </div>
+    <h3>Location of the Colleges</h3>
+    <div class="containerHome">
+        <img src="/static/images/USmap.jpg" alt="Map of the Colleges" class="image">
+        <div class="circle" style="top: 20%; left: 50%;">
+            <div class="tooltip">Pomona College</div>
+        </div>
+        <div class="circle" style="top: 58%; left: 90%;">
+            <div class="tooltip">Carleton College</div>
+        </div>
+        <!-- Add more dots as needed -->
+    </div>
 </body>
 </html>
