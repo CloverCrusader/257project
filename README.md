@@ -1,9 +1,8 @@
-Hello! Our team is Frida, Phi, Michalea, and Aimee :)
+Hello! Our team is made up of Frida Rojo, Michalea Lam, Phi Rapacz, and Aimee Yuan :)
 
-current errors: when you click popular majors tab from the display page of financial aid, the url DNE
-similarily, when in display-aid, and clicking popular majors, there is an error url DNE
+current known errors: none
 
-Upon project completion, run:
+Run:
 
     $ python3 collegeFind.py
 
