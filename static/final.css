@@ -3,11 +3,6 @@
   color: #662d91;
 }
 
-.my-class{
-  text-align: center;
-  color: blue;
-}
-
 .invisible{
   color: white;
 }
@@ -107,7 +102,7 @@ body {
 .text {
   background-color: #fff;
   color: black;
-  font-size: 16px;
+  font-size: 20px;
   padding: 16px 32px;
 }
 
