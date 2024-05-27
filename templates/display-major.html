@@ -6,7 +6,7 @@
 
 <body>
 
- <h2><center>CollegeFind</center></h2>
+ <h2>CollegeFind</h2>
   
 <div class="topnav">
   <a href="/">Home</a>
@@ -16,9 +16,9 @@
   <a class="active" href="/popMajor">Popular Major</a>
 </div>
  
-<h2><center>Explore Popular Majors</center></h2>
+<h2>Explore Popular Majors</h2>
 
-<p><center>{{major}} is the most popular major at these colleges: </center></p>
+<p>{{major}} is the most popular major at these colleges: </p>
 
  <div class="container">
  {% for school, state in stats %}
@@ -30,6 +30,6 @@
 </div>
  
 <br>
- <center><button onclick="newSearch('/popularmajor')">New Search</button></center>
+ <button class="submit-button" onclick="newSearch('/popularmajor')">New Search</button>
  <br>
 </body>
