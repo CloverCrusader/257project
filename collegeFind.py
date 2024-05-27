@@ -96,7 +96,7 @@ def get_college_stats(college1, college2):
 
     return results
 
-def get_college_aid(college1, college2):
+def get_college_aid(college):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -106,22 +106,25 @@ def get_college_aid(college1, college2):
 
     cur = conn.cursor()
     
-    query = "SELECT * FROM financialaid WHERE school IN (%s, %s)"
+    query = f"SELECT * FROM financialaid WHERE school IN {college}"
 
-    cur.execute(query, (college1, college2))
-    results = cur.fetchall()
+    cur.execute(query)
+    results = cur.fetchone()
+
+    dictdata = {'f0to30grand': results[2], 'f30to48grand': results[3], 'f48to75grand': results[4], 'f75to110grand': results[5], 'f110grandup': results[6]}
 
     conn.close()
 
-    return results
+    return json.dumps(dictdata)
 
 
 @app.route('/compare/<college1>/<college2>')
 def comparing_stats(college1, college2):
     stats = get_college_stats(college1, college2)
-    aid = get_college_aid(college1, college2)
+    aidA = get_college_aid(college1)
+    aidB = get_college_aid(college2)
 
-    return flask.render_template("display-compare.html", stats=stats, aid=aid)
+    return flask.render_template("display-compare.html", stats=stats, aidA=aidA, aidB=aidB)
     
 @app.route('/compare')
 def compare():
