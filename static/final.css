@@ -89,6 +89,10 @@ body {
   text-align: center;
 }
 
+.dot {
+  top:30%;
+  left:50%
+}
 
 
 .text {
