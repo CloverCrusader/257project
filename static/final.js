@@ -47,7 +47,7 @@ function submitRankings(){
 		console.log(url);
 		location.href = url;
     	} else {
-        	alert("Please select two both options.");
+        	alert("Please select both options.");
     	}
 }
 function updateFinancialAid() {
