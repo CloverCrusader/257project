@@ -112,3 +112,13 @@ body {
 .school-info {
       text-align: center;
 }
+
+  select {
+    font-size: 20px;
+    font-family: Tahoma;
+  }
+
+  option {
+    font-size: 20px; 
+    font-family: Tahoma;
+  }
