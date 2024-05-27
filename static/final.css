@@ -136,8 +136,16 @@ table {
   font-size: 20px;
   font-family: Tahoma;
   text-align: center;
-        }
+}
+
 th, td {
   padding: 10px 20px; 
   border: 1px solid #CBC3E3; 
-        }
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+}
