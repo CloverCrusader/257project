@@ -45,7 +45,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            fetch(`/data/{{ stats[0][1] }}/{{ stats[1][1] }}`)
+            fetch(`/data/{{ aid[0][1] }}/{{ aid[1][1] }}`)
                 .then(response => response.json())
                 .then(data => {
                     const chartData = data.map(item => [item[1], item[4]]); // Adjust index based on your data structure
