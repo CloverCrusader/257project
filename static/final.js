@@ -115,7 +115,6 @@ async function fetchjson(college1, college2){
 
 }
 	
-	// assign above to second dictionary
 function makeChart(json1, json2, c1, c2){
 
 	f0C1 = json1[ 'f0to30grand' ]
@@ -141,7 +140,6 @@ function makeChart(json1, json2, c1, c2){
 	    ["110k+", f110C1, f110C2]
 	  ];
 	  
-	  // create a data set
 	  var dataSet = anychart.data.set(data);
 	
 	  var college1Data = dataSet.mapAs({x: 0, value: 1});
@@ -156,23 +154,19 @@ function makeChart(json1, json2, c1, c2){
 	
 	  chart.legend().enabled(true);
 	  
-	  chart.title("College Finaval Aid vs Income Data");
+	  chart.title("College Finacial Aid vs Income Data");
 	  
 	  chart.yAxis().title("Money");
 	  chart.xAxis().title("Income Range");
 	  
-	  // customize the series markers
 	  college1.hovered().markers().enabled(true).type("circle").size(4);
 	  college2.hovered().markers().enabled(true).type("circle").size(4);
 	  
-	  // turn on crosshairs and remove the y hair
 	  chart.crosshair().enabled(true).yStroke(null).yLabel(false);
 	  
-	  // change the tooltip position
 	  chart.tooltip().positionMode("point");
 	  chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
 	  
-	  // specify where to display the chart
 	  chart.container("container");
 	  
 	  chart.draw();
