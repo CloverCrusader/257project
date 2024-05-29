@@ -102,28 +102,43 @@ function submitMajor() {
 	}
 }
 
-function fetchjson(college1, college2){
-	URL = "/graphdata/" + college1;
+async function fetchjson(college1, college2){
+	URL1 = "/graphdata/" + college1;
 
-    	fetch(URL).then( response => response.json());
 
-	// assign above to first dictionary
+	UR2L = "/graphdata/" + college2;
 
-	URL = "/graphdata/" + college2;
+    	json1 = await fetch(URL1).json();
+	json2 = await fetch(URL2).json();
 
-    	fetch(URL).then( response => response.json());
+	makeChart(json1, json2, college1, college2)
 
+}
+	
 	// assign above to second dictionary
+function makeChart(json1, json2, c1, c2){
 
+	f0C1 = json1[ 'f0to30grand' ]
+	f30C1 = json1[ 'f30to48grand' ]
+	f48C1 = json1[ 'f48to75grand' ]
+	f75C1 = json1[ 'f75to110grand' ]
+	f110C1 = json1[ 'f110grandup' ]
+
+	f0C2 = json2[ 'f0to30grand' ]
+	f30C2 = json2[ 'f30to48grand' ]
+	f48C2 = json2[ 'f48to75grand' ]
+	f75C2 = json2[ 'f75to110grand' ]
+	f110C2 = json2[ 'f110grandup' ]
+	
 	anychart.onDocumentReady(function () {
 	  
 	  var data = [
 	    
-	    ["0-30k", 4, 0],
-	    ["30-48k", 4, 0],
-	    ["48-75k", 6, 0],
-	    ["75-110k", 9, 1],
-	    ["110k+", 12, 2]
+	    ["0-30k", f0C1, f0C2],
+	    ["30-48k", f30C1, f30C2],
+	    ["48-75k", f48C1, f48C2],
+	    ["75-110k", f75C1, f75C2],
+	    ["110k+", f110C1, f110C2]
 	  ];
 	  
 	  // create a data set
@@ -135,9 +150,9 @@ function fetchjson(college1, college2){
 	  var chart = anychart.line();
 	
 	  var college1 = chart.line(college1Data);
-	  college1.name("College1");
+	  college1.name(c1);
 	  var college2 = chart.line(college2Data);
-	  college2.name("College2");
+	  college2.name(c2);
 	
 	  chart.legend().enabled(true);
 	  
