@@ -21,7 +21,7 @@ function submitCompare(){
 		url ="/compare/" + college1 + "/" + college2;
 		console.log(url);
 		location.href = url;
-		fetchjson(college1, college2);
+		//fetchjson(college1, college2);
 	} else {
 		alert("Please select two different colleges.");
 	}	
