@@ -21,6 +21,7 @@ function submitCompare(){
 		url ="/compare/" + college1 + "/" + college2;
 		console.log(url);
 		location.href = url;
+		fetchjson(college1, college2);
 	} else {
 		alert("Please select two different colleges.");
 	}	
@@ -105,7 +106,6 @@ function submitMajor() {
 async function fetchjson(college1, college2){
 	URL1 = "/graphdata/" + college1;
 
-
 	URL2 = "/graphdata/" + college2;
 
     	json1 = await fetch(URL1).json().then(response => response.json());
@@ -116,8 +116,7 @@ async function fetchjson(college1, college2){
 }
 	
 function makeChart(json1, json2, c1, c2){
-	console.log('Data for College 1:', json1);
-   	console.log('Data for College 2:', json2);
+	console.log('got here");
 	
 	f0C1 = json1[ 'f0to30grand' ]
 	f30C1 = json1[ 'f30to48grand' ]
