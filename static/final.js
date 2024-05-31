@@ -106,7 +106,7 @@ async function fetchjson(college1, college2){
 	URL1 = "/graphdata/" + college1;
 
 
-	UR2L = "/graphdata/" + college2;
+	URL2 = "/graphdata/" + college2;
 
     	json1 = await fetch(URL1).json();
 	json2 = await fetch(URL2).json();
