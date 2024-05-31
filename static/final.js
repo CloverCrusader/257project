@@ -167,7 +167,7 @@ function makeChart(json1, json2, c1, c2){
 	  chart.tooltip().positionMode("point");
 	  chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
 	  
-	  chart.container("container");
+	  chart.container("graph");
 	  
 	  chart.draw();
 	  
