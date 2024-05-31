@@ -108,8 +108,8 @@ async function fetchjson(college1, college2){
 
 	URL2 = "/graphdata/" + college2;
 
-    	json1 = await fetch(URL1).json();
-	json2 = await fetch(URL2).json();
+    	json1 = await fetch(URL1).json().then(response => response.json());
+	json2 = await fetch(URL2).json().then(response => response.json());
 
 	makeChart(json1, json2, college1, college2)
 
