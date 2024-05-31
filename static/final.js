@@ -3,13 +3,10 @@ function updateCollege() {
   dropdown1 = document.getElementById("college1");
   first =  document.getElementById("college1Show")
   first.innerHTML = dropdown1.value;
-
   dropdown2 = document.getElementById("college2");
   second =  document.getElementById("college2Show")
   second.innerHTML = dropdown2.value;
-
 }
-
 function submitCompare(){
 	dropdown1 = document.getElementById("college1")
 	college1 = dropdown1.value;
@@ -25,7 +22,6 @@ function submitCompare(){
 		alert("Please select two different colleges.");
 	}	
 }
-
 function updateRankings() {
   
 	rateDropdown = document.getElementById("rate");
@@ -35,16 +31,12 @@ function updateRankings() {
 	lowhighDropdown = document.getElementById("lowhigh");
 	lowhighText =  document.getElementById("lowhighText")
 	lowhighText.innerHTML = lowhighDropdown.value;
-
 }
-
 function submitRankings(){
 	rateDropdown = document.getElementById("rate")
 	rate = rateDropdown.value;
-
 	lowhighDropdown = document.getElementById("lowhigh")
 	lowhigh = lowhighDropdown.value;
-
 	if ((rate !== "null") && (lowhigh !== "null")) {
 		url ="/rankings/" + rate + "/" + lowhigh;
 		console.log(url);
@@ -62,16 +54,12 @@ function updateFinancialAid() {
 	collegeDropdown = document.getElementById("colleges");
 	collegeText =  document.getElementById("collegeText")
 	collegeText.innerHTML = collegeDropdown.value;
-
 }
-
 function submitFinancialAid(){
 	incomeDropdown = document.getElementById("income")
 	income = incomeDropdown.value;
-
 	collegeDropdown = document.getElementById("colleges")
 	colleges = collegeDropdown.value;
-
 	if (income !== "null") {
 		url ="/financialaid/" + income + "/" + colleges;
 		console.log(url);
@@ -80,15 +68,12 @@ function submitFinancialAid(){
         	alert("Please select an income range.");
     	}
 }
-
 function updateMajor() {
   
 	majorDropdown = document.getElementById("major");
 	majorText =  document.getElementById("majorText")
 	majorText.innerHTML = majorDropdown.value;
-
 }
-
 function submitMajor() {
 	majorDropdown = document.getElementById("major");
 	major = majorDropdown.value;
@@ -101,7 +86,6 @@ function submitMajor() {
 	alert("Please select a major.");
 	}
 }
-
 async function fetchjson(college1, college2){
 	URL1 = "/graphdata/" + college1;
 
@@ -110,19 +94,15 @@ async function fetchjson(college1, college2){
 
     	json1 = await fetch(URL1).json();
 	json2 = await fetch(URL2).json();
-
 	makeChart(json1, json2, college1, college2)
-
 }
 	
 function makeChart(json1, json2, c1, c2){
-
 	f0C1 = json1[ 'f0to30grand' ]
 	f30C1 = json1[ 'f30to48grand' ]
 	f48C1 = json1[ 'f48to75grand' ]
 	f75C1 = json1[ 'f75to110grand' ]
 	f110C1 = json1[ 'f110grandup' ]
-
 	f0C2 = json2[ 'f0to30grand' ]
 	f30C2 = json2[ 'f30to48grand' ]
 	f48C2 = json2[ 'f48to75grand' ]
@@ -167,13 +147,12 @@ function makeChart(json1, json2, c1, c2){
 	  chart.tooltip().positionMode("point");
 	  chart.tooltip().position("right").anchor("left-center").offsetX(5).offsetY(5);
 	  
-	  chart.container("graph");
+	  chart.container("container");
 	  
 	  chart.draw();
 	  
 	});
-
 }
-
 function newSearch(url){
 	location.href = url;
+}
