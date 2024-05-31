@@ -97,7 +97,7 @@ def get_college_stats(college1, college2):
     return results
 
 @app.route('/graphdata/<college>')
-def get_college_aid(college1, college2):
+def get_college_aid(college):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
