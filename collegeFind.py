@@ -107,16 +107,15 @@ def get_college_aid(college):
 
     cur = conn.cursor()
     
-    query = f"SELECT * FROM financialaid WHERE school IN {college}"
-
-    cur.execute(query)
+    query = f"SELECT * FROM financialaid WHERE school = %s"
+    cur.execute(query, (college,))
     results = cur.fetchone()
 
     dictdata = {'f0to30grand': results[2], 'f30to48grand': results[3], 'f48to75grand': results[4], 'f75to110grand': results[5], 'f110grandup': results[6]}
 
     conn.close()
 
-    return json.dumps(dictdata)
+    return flask.jsonify(dictdata)
 
 
 @app.route('/compare/<college1>/<college2>')
