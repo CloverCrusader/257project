@@ -116,7 +116,9 @@ async function fetchjson(college1, college2){
 }
 	
 function makeChart(json1, json2, c1, c2){
-
+	console.log('Data for College 1:', json1);
+   	console.log('Data for College 2:', json2);
+	
 	f0C1 = json1[ 'f0to30grand' ]
 	f30C1 = json1[ 'f30to48grand' ]
 	f48C1 = json1[ 'f48to75grand' ]
