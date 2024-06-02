@@ -69,7 +69,7 @@ def rankings():
 
 # Compare functionality
 
-def get_college_stats(college1, college2):
+def get_colleges_stats(college1, college2):
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -87,7 +87,7 @@ def get_college_stats(college1, college2):
   
 @app.route('/compare/<college1>/<college2>')
 def comparing_stats(college1, college2):
-    stats = get_college_stats(college1, college2)
+    stats = get_colleges_stats(college1, college2)
     return flask.render_template("display-compare.html", stats=stats)
     
 @app.route('/compare')
