@@ -7,6 +7,7 @@ function updateCollege() {
   second =  document.getElementById("college2Show")
   second.innerHTML = dropdown2.value;
 }
+
 function submitCompare(){
 	dropdown1 = document.getElementById("college1")
 	college1 = dropdown1.value;
@@ -22,6 +23,7 @@ function submitCompare(){
 		alert("Please select two different colleges.");
 	}	
 }
+
 function updateRankings() {
   
 	rateDropdown = document.getElementById("rate");
@@ -32,6 +34,7 @@ function updateRankings() {
 	lowhighText =  document.getElementById("lowhighText")
 	lowhighText.innerHTML = lowhighDropdown.value;
 }
+
 function submitRankings(){
 	rateDropdown = document.getElementById("rate")
 	rate = rateDropdown.value;
@@ -45,6 +48,7 @@ function submitRankings(){
         	alert("Please select both options.");
     	}
 }
+
 function updateFinancialAid() {
 	
 	incomeDropdown = document.getElementById("income");
@@ -55,6 +59,7 @@ function updateFinancialAid() {
 	collegeText =  document.getElementById("collegeText")
 	collegeText.innerHTML = collegeDropdown.value;
 }
+
 function submitFinancialAid(){
 	incomeDropdown = document.getElementById("income")
 	income = incomeDropdown.value;
@@ -68,12 +73,14 @@ function submitFinancialAid(){
         	alert("Please select an income range.");
     	}
 }
+
 function updateMajor() {
   
 	majorDropdown = document.getElementById("major");
 	majorText =  document.getElementById("majorText")
 	majorText.innerHTML = majorDropdown.value;
 }
+
 function submitMajor() {
 	majorDropdown = document.getElementById("major");
 	major = majorDropdown.value;
