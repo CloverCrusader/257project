@@ -65,7 +65,8 @@ def displayRanking(rate, lowhigh):
 @app.route('/rankings')
 def rankings():
     return flask.render_template("finalrankings.html")
-  
+
+
 # Compare functionality
 
 def get_college_stats(college1, college2):
@@ -83,24 +84,6 @@ def get_college_stats(college1, college2):
     conn.close()
   
     return results
-
-@app.route('/graphdata/<college>')
-def get_college_aid(college):
-    conn = psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="rapaczs",
-        user="rapaczs",
-        password="chip979bond")
-    cur = conn.cursor()
-    
-    query = f"SELECT * FROM financialaid WHERE school IN {college}"
-    cur.execute(query)
-    results = cur.fetchone()
-    dictdata = {'f0to30grand': results[2], 'f30to48grand': results[3], 'f48to75grand': results[4], 'f75to110grand': results[5], 'f110grandup': results[6]}
-    conn.close()
-  
-    return json.dumps(dictdata)
   
 @app.route('/compare/<college1>/<college2>')
 def comparing_stats(college1, college2):
