@@ -22,7 +22,7 @@ def get_name_options():
     html = html + f'<option value="{school}">{school}</option>'
     html = html + '\n'
     
-  return html
+    return html
   
 # Home functionality
 
@@ -119,7 +119,7 @@ def get_major_stats(major):
         password="chip979bond")
     cur = conn.cursor()
     
-  query = f"SELECT school, state FROM schoolstats WHERE popmajor = %s"
+    query = f"SELECT school, state FROM schoolstats WHERE popmajor = %s"
     cur.execute(query, (major,))
     results = cur.fetchall()
     conn.close()
