@@ -9,7 +9,7 @@ Users can
 4) Discover which colleges' most popular major aligns with their major interest
 5) Hover over a map of the United States to see the general location of the 50 colleges
 
-Our data regarding the NEED TO FINISH
+Our data covers the top 50 US colleges as of 2024, however the data itself is only up to date as of 2021.
 
 Run:
 
