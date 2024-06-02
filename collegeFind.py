@@ -46,7 +46,7 @@ def get_ranking_stats(rate, lowhigh):
     results = cur.fetchall()
     conn.close()
     
-  return results
+    return results
 
 @app.route('/rankings/<rate>/<lowhigh>')
 def displayRanking(rate, lowhigh):
