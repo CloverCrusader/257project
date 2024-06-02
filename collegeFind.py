@@ -96,7 +96,7 @@ def compare():
     return flask.render_template("finalcompare.html", DropdownOptions = dropdownOptions)
   
 # Financial Aid functionality
-def get_colleges_stats(income, colleges):#colleges
+def get_aid_stats(income, colleges):#colleges
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -113,7 +113,7 @@ def get_colleges_stats(income, colleges):#colleges
 
 @app.route('/financialaid/<income>/<colleges>')
 def comparing_aidStats(income, colleges):
-    aid = get_colleges_stats(income, colleges) #colleges
+    aid = get_aid_stats(income, colleges) #colleges
     
     return flask.render_template("display-aid.html", aid=aid, colleges=colleges)
   
