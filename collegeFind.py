@@ -155,7 +155,7 @@ def popMajor():
   
 @app.route('/map')
 def map():
-    return flask.render_template("test-map.html")
+    return flask.render_template("display-map.html")
   
 if __name__ == '__main__':
     my_port = 5223
