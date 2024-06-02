@@ -1,5 +1,7 @@
+/*The function 'updateCollege' takes the values from the two dropdowns on the compare 
+tab and used the stored variables to display the chosen schools belows
+*/
 function updateCollege() {
-  
   dropdown1 = document.getElementById("college1");
   first =  document.getElementById("college1Show")
   first.innerHTML = dropdown1.value;
@@ -8,6 +10,9 @@ function updateCollege() {
   second.innerHTML = dropdown2.value;
 }
 
+/*'submitCompare' takes the values from the two dropdowns on the compare 
+tab and passes the stored variables to the display page for the comparing tab, reselts in an alert if the same college is selected
+*/
 function submitCompare(){
 	dropdown1 = document.getElementById("college1")
 	college1 = dropdown1.value;
