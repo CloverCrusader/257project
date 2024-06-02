@@ -1,5 +1,8 @@
 import psycopg2
 
+# Python code to batch create data tables on server in psql.
+# Once created, data must be copied in manually from cleaned CSV files.
+
 def main():
         conn = psycopg2.connect(
                 host="localhost",
@@ -43,13 +46,6 @@ def main():
         cur.execute( sql )
         conn.commit()
         
-        # # copy information from titleless CSV files into tables
-        # sql = "\copy financialaid FROM 'financialaid.csv' DELIMITER ',' CSV"
-        # cur.execute( sql )
-
-        # sql = "\copy schoolstats FROM 'schoolstats.csv' DELIMITER ',' CSV"
-        # cur.execute( sql )
-
         # close connection to server
         cur.close()
         conn.close()
