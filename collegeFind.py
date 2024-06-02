@@ -22,7 +22,7 @@ def get_name_options():
     html = html + f'<option value="{school}">{school}</option>'
     html = html + '\n'
     
-    return html
+  return html
   
 # Home functionality
 
