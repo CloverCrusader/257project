@@ -1,5 +1,5 @@
 /*The function 'updateCollege' takes the values from the two dropdowns on the compare 
-tab and used the stored variables to display the chosen schools belows
+tab and uses the stored variables to display the chosen schools below
 */
 function updateCollege() {
   dropdown1 = document.getElementById("college1");
@@ -9,9 +9,8 @@ function updateCollege() {
   second =  document.getElementById("college2Show")
   second.innerHTML = dropdown2.value;
 }
-
 /*'submitCompare' takes the values from the two dropdowns on the compare 
-tab and passes the stored variables to the display page for the comparing tab, reselts in an alert if the same college is selected
+tab and passes the stored variables to the display page for the comparing tab, results in an alert if the same college is selected
 */
 function submitCompare(){
 	dropdown1 = document.getElementById("college1")
@@ -28,7 +27,9 @@ function submitCompare(){
 		alert("Please select two different colleges.");
 	}	
 }
-
+/*The function 'updateRankings' takes the values from the two dropdowns on the Ranking 
+tab and uses the stored variables to display the schools based on the chosen filter and sort by
+*/
 function updateRankings() {
   
 	rateDropdown = document.getElementById("rate");
@@ -39,7 +40,9 @@ function updateRankings() {
 	lowhighText =  document.getElementById("lowhighText")
 	lowhighText.innerHTML = lowhighDropdown.value;
 }
-
+/*'submitRankings' takes the values from the two dropdowns on the rankings 
+tab and passes the stored variables to the display page for the rankings tab, results in an alert if only one is selected
+*/
 function submitRankings(){
 	rateDropdown = document.getElementById("rate")
 	rate = rateDropdown.value;
@@ -53,7 +56,9 @@ function submitRankings(){
         	alert("Please select both options.");
     	}
 }
-
+/*The function 'updateFinancialAid' takes the values from the two dropdowns on the Estimate Your Financial Aid 
+tab and uses the stored variables to display choices of income level and school below
+*/
 function updateFinancialAid() {
 	
 	incomeDropdown = document.getElementById("income");
@@ -64,7 +69,9 @@ function updateFinancialAid() {
 	collegeText =  document.getElementById("collegeText")
 	collegeText.innerHTML = collegeDropdown.value;
 }
-
+/*'submitFinancialAid' takes the values from the two dropdowns on the financial aid 
+tab and passes the stored variables to the display page for the financial aid tab, results in an alert if income is not selected
+*/
 function submitFinancialAid(){
 	incomeDropdown = document.getElementById("income")
 	income = incomeDropdown.value;
@@ -78,14 +85,18 @@ function submitFinancialAid(){
         	alert("Please select an income range.");
     	}
 }
-
+/*The function 'updateMajor' takes the values from the two dropdowns on the major 
+tab and uses the stored variables to display the chosen schools below
+*/
 function updateMajor() {
   
 	majorDropdown = document.getElementById("major");
 	majorText =  document.getElementById("majorText")
 	majorText.innerHTML = majorDropdown.value;
 }
-
+/*'submitMajor' takes the values from the two dropdowns on the popular major 
+tab and passes the stored variables to the display page for the popular major tab, results in an alert if major is not selected
+*/
 function submitMajor() {
 	majorDropdown = document.getElementById("major");
 	major = majorDropdown.value;
@@ -98,7 +109,8 @@ function submitMajor() {
 	alert("Please select a major.");
 	}
 }
-
+/*The function 'newSearch' sends the user to a refreshed screen to search again for the specific tab's query.
+*/
 function newSearch(url){
 	location.href = url;
 }
